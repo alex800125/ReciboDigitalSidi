@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="mainScreenTitleText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/main_screen_text</item>
+        <item name="android:textSize">@dimen/main_screen_text_size_title</item>
+        <item name="android:layout_marginTop">@dimen/main_screen_text_margin_top</item>
+        <item name="android:layout_marginStart">@dimen/main_screen_text_title_margin_start</item>
+    </style>
+
+    <style name="mainScreenSloganText" parent="mainScreenTitleText">
+        <item name="android:textSize">@dimen/main_screen_text_size_slogan</item>
+        <item name="android:layout_marginStart">@dimen/main_screen_text_slogan_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/main_screen_text_slogan_margin_horizontal</item>
+    </style>
+</resources>

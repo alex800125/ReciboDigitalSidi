@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Recibo Digital</string>
+
+    <string name="main_screen_title">Recibo Digital</string>
+    <string name="main_screen_slogan">Reduzindo os impactos ambientais e preservando o meio ambiente!</string>
+
+    <string name="main_screen_logo_description">Logo do Sidi</string>
+    <string name="main_screen_button_text">sign Google!</string>
+</resources>
