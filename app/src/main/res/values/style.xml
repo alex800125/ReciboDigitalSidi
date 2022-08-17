@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="mainScreenTitleText" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/main_screen_text</item>
-        <item name="android:textSize">@dimen/main_screen_text_size_title</item>
-        <item name="android:layout_marginTop">@dimen/main_screen_text_margin_top</item>
-        <item name="android:layout_marginStart">@dimen/main_screen_text_title_margin_start</item>
+    <!-- Login Screen -->
+    <style name="loginScreenTitleText" parent="ThemeOverlay.AppCompat">
+        <item name="android:textColor">@color/login_screen_text</item>
+        <item name="android:textSize">@dimen/login_screen_text_size_title</item>
+        <item name="android:layout_marginTop">@dimen/login_screen_text_margin_top</item>
+        <item name="android:layout_marginStart">@dimen/login_screen_text_title_margin_start</item>
     </style>
 
-    <style name="mainScreenSloganText" parent="mainScreenTitleText">
-        <item name="android:textSize">@dimen/main_screen_text_size_slogan</item>
-        <item name="android:layout_marginStart">@dimen/main_screen_text_slogan_margin_horizontal</item>
-        <item name="android:layout_marginEnd">@dimen/main_screen_text_slogan_margin_horizontal</item>
+    <style name="loginScreenSloganText" parent="loginScreenTitleText">
+        <item name="android:textSize">@dimen/login_screen_text_size_slogan</item>
+        <item name="android:layout_marginStart">@dimen/login_screen_text_slogan_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/login_screen_text_slogan_margin_horizontal</item>
     </style>
+
+    <style name="loginScreenButton" parent="ThemeOverlay.AppCompat">
+        <item name="android:layout_marginStart">@dimen/login_screen_button_login_margin</item>
+        <item name="android:layout_marginEnd">@dimen/login_screen_button_login_margin</item>
+        <item name="android:layout_height">@dimen/login_screen_button_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/login_screen_button_text</item>
+        <item name="android:backgroundTint">@color/login_screen_button_background_tint</item>
+    </style>
+
+    <style name="loginScreenForgotPasswordText" parent="ThemeOverlay.AppCompat">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/login_screen_forgot_password_text</item>
+        <item name="android:text">@string/login_screen_forgot_password_text</item>
+        <item name="android:textSize">@dimen/login_screen_button_forgot_password_text</item>
+        <item name="android:layout_marginTop">@dimen/login_screen_button_forgot_password_margin_top</item>
+    </style>
+
 </resources>

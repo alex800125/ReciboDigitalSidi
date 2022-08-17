@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Login Screen -->
+    <color name="login_screen_text">#FAFAFA</color>
+    <color name="login_screen_button_background_tint">#BA86FC</color>
+    <color name="login_screen_forgot_password_text">#BA86FC</color>
+</resources>

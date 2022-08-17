@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Recibo Digital</string>
+
+    <!-- Login Screen -->
+    <string name="login_screen_title">Recibo Digital</string>
+    <string name="login_screen_slogan">Reduzindo os impactos ambientais e preservando o meio ambiente!</string>
+    <string name="login_screen_logo_description">Logo do Sidi</string>
+    <string name="login_screen_login_button_text">Entrar!</string>
+    <string name="login_screen_new_account_button_text">Nova Conta</string>
+    <string name="login_screen_forgot_password_text">Esqueceu a senha?</string>
+</resources>
