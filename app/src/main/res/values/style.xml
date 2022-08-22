@@ -15,11 +15,14 @@
         <item name="android:layout_marginEnd">@dimen/login_screen_text_slogan_margin_horizontal</item>
     </style>
 
-    <style name="loginScreenButton" parent="ThemeOverlay.AppCompat">
-        <item name="android:layout_marginStart">@dimen/login_screen_button_login_margin</item>
-        <item name="android:layout_marginEnd">@dimen/login_screen_button_login_margin</item>
+    <style name="loginScreenSize" parent="ThemeOverlay.AppCompat">
+        <item name="android:layout_marginStart">@dimen/login_screen_login_margin</item>
+        <item name="android:layout_marginEnd">@dimen/login_screen_login_margin</item>
         <item name="android:layout_height">@dimen/login_screen_button_height</item>
         <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="loginScreenButton" parent="loginScreenSize">
         <item name="android:textColor">@color/login_screen_button_text</item>
         <item name="android:backgroundTint">@color/login_screen_button_background_tint</item>
     </style>

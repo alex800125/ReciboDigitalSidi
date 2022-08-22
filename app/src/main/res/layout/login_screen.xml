@@ -34,10 +34,32 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_title" />
 
+    <EditText
+        android:id="@+id/user_email"
+        style="@style/loginScreenSize"
+        android:layout_marginBottom="@dimen/login_screen_margin_bottom"
+        android:autofillHints="emailAddress"
+        android:hint="@string/login_screen_login_edittext"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@id/user_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/user_password"
+        style="@style/loginScreenSize"
+        android:layout_marginBottom="@dimen/login_screen_margin_bottom"
+        android:autofillHints="password"
+        android:hint="@string/login_screen_password_edittext"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@id/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/login"
         style="@style/loginScreenButton"
-        android:layout_marginBottom="@dimen/login_screen_button_login_margin_bottom"
+        android:layout_marginBottom="@dimen/login_screen_margin_bottom"
         android:text="@string/login_screen_login_button_text"
         app:layout_constraintBottom_toTopOf="@id/new_account"
         app:layout_constraintEnd_toEndOf="parent"
