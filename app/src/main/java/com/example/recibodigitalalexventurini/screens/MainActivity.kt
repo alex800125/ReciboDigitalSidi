@@ -1,4 +1,4 @@
-package com.example.recibodigitalalexventurini
+package com.example.recibodigitalalexventurini.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.recibodigitalalexventurini.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
