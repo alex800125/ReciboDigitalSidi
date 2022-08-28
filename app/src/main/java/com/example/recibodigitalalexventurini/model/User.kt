@@ -1,6 +1,6 @@
 package com.example.recibodigitalalexventurini.model
 
-internal class User {
+class User {
 
     // Example user infos:
     //  "id": 123,
@@ -12,12 +12,24 @@ internal class User {
     //  "age": 30,
     //  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTIzIiwiaWF0IjoxNjQzMjAwOTQ2LCJleHAiOjE2NDMyODczNDZ9.kGFSAU2qsYS3DamSXDPBnAfG-xQAw-OKSirf18yDxU4"
 
-    private val id: Int? = null
-    private val username: String? = null
-    private val firstName: String? = null
-    private val lastName: String? = null
-    private val email: String? = null
-    private val role: String? = null
-    private val age: Int? = null
-    private val token: String? = null
+    data class UserInfo(
+        val id: String,
+        val username: String,
+        val first_name: String,
+        val last_name: String,
+        val email: String,
+        val role: String,
+        val age: String,
+        val token: String
+    )
+
+    var id: Int? = null
+    var username: String? = null
+    var firstName: String? = null
+    var lastName: String? = null
+    var email: String? = null
+    var pass: String? = null
+    var role: String? = null
+    var age: Int? = null
+    var token: String? = null
 }
