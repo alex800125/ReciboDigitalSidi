@@ -2,6 +2,8 @@ package com.example.recibodigitalalexventurini.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -12,6 +14,8 @@ import com.example.recibodigitalalexventurini.utils.ApiServiceUtils
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils
 
 class MainActivity : AppCompatActivity() {
+    private val TAG = "MainActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_screen)
@@ -36,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         val user = User()
         user.email = "m.aleixo@sidi.org.br"
         user.pass = "Aleixo123!"
-        ApiServiceUtils().getRequestLogin(this, ConstantsUtils.POST_LOGIN_API, user)
+        ApiServiceUtils().getRequestUserLogin(this, ConstantsUtils.POST_LOGIN_API, user)
     }
 
     private fun executeNewAccount() {
@@ -47,5 +51,19 @@ class MainActivity : AppCompatActivity() {
     private fun executeForgotPassword() {
         // TODO implement
         Toast.makeText(this, "Forgot Password executado", Toast.LENGTH_SHORT).show()
+    }
+
+    fun updateLoginMessageError(visibility: Boolean) {
+        // TODO verify the crash occurs here when the password is wrong
+        findViewById<TextView>(R.id.wrong_user).visibility = if (visibility) {
+            View.VISIBLE
+        } else {
+            View.INVISIBLE
+        }
+    }
+
+    fun updateLoginSuccess(message: String) {
+        //Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        Log.i(TAG, message)
     }
 }

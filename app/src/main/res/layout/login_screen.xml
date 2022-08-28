@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".screens.MainActivity">
 
-
     <ImageView
         android:id="@+id/sidiLogo"
         android:layout_width="match_parent"
@@ -48,10 +47,17 @@
     <EditText
         android:id="@+id/user_password"
         style="@style/loginScreenSize"
-        android:layout_marginBottom="@dimen/login_screen_margin_bottom"
         android:autofillHints="password"
         android:hint="@string/login_screen_password_edittext"
         android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@id/wrong_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/wrong_user"
+        style="@style/loginScreenWrongUserText"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

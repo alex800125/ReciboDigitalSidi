@@ -6,4 +6,5 @@
     <color name="login_screen_button_text">#FAFAFA</color>
     <color name="login_screen_button_background_tint">#6200EE</color>
     <color name="login_screen_forgot_password_text">#6200EE</color>
+    <color name="login_screen_message_wrong_user_text">#FF0015</color>
 </resources>
