@@ -3,33 +3,28 @@ package com.example.recibodigitalalexventurini.model
 class User {
 
     // Example user infos:
-    //  "id": 123,
-    //  "username": "m.aleixo",
-    //  "first_name": "Marcos",
-    //  "last_name": "Aleixo",
-    //  "email": "m.aleixo@sidi.org.br",
-    //  "role": "SuperUser",
-    //  "age": 30,
-    //  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTIzIiwiaWF0IjoxNjQzMjAwOTQ2LCJleHAiOjE2NDMyODczNDZ9.kGFSAU2qsYS3DamSXDPBnAfG-xQAw-OKSirf18yDxU4"
+    //   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZXgyQGVtYWlsLmNvbSIsImlkIjoiNjMxMTM5Y2QzNDYyNmY2NzExYzEzMDM4IiwiaWF0IjoxNjYyMDc0NDI4LCJleHAiOjE2NjIxMTA0Mjh9.0SP66dzIwu50RVmE7yOnN-xpVko3kSu0ChMYc3kv9Ps",
+    //   "idUser": "631139cd34626f6711c13038",
+    //   "name": "alex2",
+    //   "email": "alex2@email.com",
+    //   "cpf": "55555555555",
+    //   "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1135.jpg"
 
     data class UserInfo(
-        val id: String,
-        val username: String,
-        val first_name: String,
-        val last_name: String,
+        val token: String,
+        val idUser: String,
+        val name: String,
         val email: String,
-        val role: String,
-        val age: String,
-        val token: String
+        val cpf: String,
+        val avatar: String
     )
 
-    var id: Int? = null
-    var username: String? = null
-    var firstName: String? = null
-    var lastName: String? = null
+    var idUser: String? = null
+    var name: String? = null
     var email: String? = null
     var pass: String? = null
-    var role: String? = null
-    var age: Int? = null
+    var cpf: String? = null
+    var acceptTerms: Boolean? = false
     var token: String? = null
+    var avatar: String? = null
 }

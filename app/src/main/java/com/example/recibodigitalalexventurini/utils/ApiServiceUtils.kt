@@ -28,7 +28,7 @@ class ApiServiceUtils {
         val userInfo = gson.fromJson(reader, User.UserInfo::class.java)
 
         val message =
-            "Login executado. Nome: " + userInfo.first_name + " " + userInfo.last_name
+            "Login executado. Nome: " + userInfo.name
         MainActivity().updateLoginSuccess(message)
     }
 

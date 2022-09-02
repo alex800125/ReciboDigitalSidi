@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun executeLogin() {
         val user = User()
-        user.email = "m.aleixo@sidi.org.br"
-        user.pass = "Aleixo123!"
-        ApiServiceUtils().getRequestUserLogin(this, ConstantsUtils.POST_LOGIN_API, user)
+        user.email = "alex2@email.com"
+        user.pass = "123"
+        ApiServiceUtils().getRequestUserLogin(this, ConstantsUtils.USER_LOGIN, user)
     }
 
     private fun executeNewAccount() {

@@ -5,32 +5,47 @@ import android.graphics.Bitmap
 class Receipt {
 
     // Example receipt infos:
-    //    "id": "469b130d-ca63-4d3d-85c1-d8929fc920fd",
-    //    "date": 1642458486,
-    //    "value": 27480,
-    //    "status": 0,
-    //    "authentication": "0760f0e4-b70f-4608-b84f-761e0e51d411",
-    //    "paymentMethod": 1,
-    //    "cardInfo": {
-    //        "brand": "Visa",
-    //        "last4digits": "9985"
-    //    },
-    //    "merchantName": "Farmacia do Messias",
-    //    "merchantId": "5520988882",
-    //    "merchantIcon": "farmacia_logo.png",
-    //    "merchantImage": "farmacia.jpg",
-    //    "description": ""
+    //    "id": "63113df734626f6711c13040",
+    //    "idUser": "631139cd34626f6711c13038",
+    //    "value": 72421,
+    //    "status": 1,
+    //    "paymentMethod": 2,
+    //    "cardInfoBrand": "Visa",
+    //    "merchantName": "teste 12",
+    //    "date": 1661449971,
+    //    "authentication": "5fa98cbe-4a0c-4b0c-a79d-56982ad11b6e",
+    //    "merchantIcon": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1048.jpg",
+    //    "merchantImage": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/170.jpg",
+    //    "message": "mensagem qualquer",
+    //    "categories": []
 
-    private val id: Int? = null
-    private val date: String? = null
-    private val value: Double? = null
-    private val status: Int? = null
-    private val authentication: String? = null
-    private val paymentMethod: Int? = null
-    private val cardInfoBrand: String? = null
-    private val cardInfoLast4digits: Int? = null
-    private val merchantName: String? = null
-    private val merchantIcon: Bitmap? = null
-    private val merchantImage: Bitmap? = null
-    private val description: String? = null
+    data class ReceiptInfo(
+        val id: String,
+        val idUser: String,
+        val value: String,
+        val status: String,
+        val paymentMethod: String,
+        val cardInfoBrand: String,
+        val merchantName: String,
+        val date: String,
+        val authentication: String,
+        val merchantIcon: String,
+        val merchantImage: String,
+        val message: String,
+        val categories: String
+    )
+
+    var id: String? = null
+    var idUser: String? = null
+    var value: Double? = null
+    val status: Int? = null
+    val paymentMethod: Int? = null
+    val cardInfoBrand: String? = null
+    val merchantName: String? = null
+    val date: String? = null
+    val authentication: String? = null
+    val merchantIcon: Bitmap? = null
+    val merchantImage: Bitmap? = null
+    val message: String? = null
+    val categories: Array<Category>? = null
 }
