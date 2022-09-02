@@ -11,4 +11,7 @@
     <string name="login_screen_new_account_button_text">Nova Conta</string>
     <string name="login_screen_forgot_password_text">Esqueceu a senha?</string>
     <string name="login_screen_message_wrong_user_text">E-mail ou senha errado</string>
+
+    <!-- Header - Home screen -->
+    <string name="header_home_screen_title">Nome padrão</string>
 </resources>

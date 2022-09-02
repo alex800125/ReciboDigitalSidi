@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="default_text">#0F0F0F</color>
+
     <!-- Login Screen -->
-    <color name="login_screen_text">#0F0F0F</color>
     <color name="login_screen_button_text">#FAFAFA</color>
     <color name="login_screen_button_background_tint">#6200EE</color>
     <color name="login_screen_forgot_password_text">#6200EE</color>
     <color name="login_screen_message_wrong_user_text">#FF0015</color>
+
+    <!-- Header - Home Screen -->
+    <color name="header_background">#6200EE</color>
 </resources>

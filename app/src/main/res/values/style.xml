@@ -3,7 +3,7 @@
 
     <!-- Login Screen -->
     <style name="loginScreenTitleText" parent="ThemeOverlay.AppCompat">
-        <item name="android:textColor">@color/login_screen_text</item>
+        <item name="android:textColor">@color/default_text</item>
         <item name="android:textSize">@dimen/login_screen_text_size_title</item>
         <item name="android:layout_marginTop">@dimen/login_screen_text_margin_top</item>
         <item name="android:layout_marginStart">@dimen/login_screen_text_title_margin_start</item>
@@ -44,4 +44,18 @@
         <item name="android:textSize">@dimen/login_screen_message_wrong_user_text_size</item>
         <item name="android:layout_marginBottom">@dimen/login_screen_margin_bottom</item>
     </style>
+
+    <!-- Header - Home screen -->
+    <style name="headerItem" parent="ThemeOverlay.AppCompat">
+        <item name="android:layout_height">@dimen/header_height</item>
+        <item name="android:layout_width">@dimen/header_width</item>
+        <item name="android:padding">@dimen/header_padding</item>
+    </style>
+
+    <style name="headerHomeScreenTitleText" parent="ThemeOverlay.AppCompat">
+        <item name="android:textColor">@color/default_text</item>
+        <item name="android:textSize">@dimen/header_home_screen_text_size_title</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

@@ -11,4 +11,7 @@
     <string name="login_screen_new_account_button_text">New Account</string>
     <string name="login_screen_forgot_password_text">Forgot password?</string>
     <string name="login_screen_message_wrong_user_text">Email or Password is wrong</string>
+
+    <!-- Header - Home screen -->
+    <string name="header_home_screen_title">Default name</string>
 </resources>

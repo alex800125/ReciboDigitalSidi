@@ -3,7 +3,7 @@ package com.example.recibodigitalalexventurini.utils
 import android.app.Activity
 import android.util.Log
 import com.example.recibodigitalalexventurini.model.User
-import com.example.recibodigitalalexventurini.screens.MainActivity
+import com.example.recibodigitalalexventurini.screens.LoginScreenActivity
 import com.google.gson.Gson
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -29,11 +29,11 @@ class ApiServiceUtils {
 
         val message =
             "Login executado. Nome: " + userInfo.name
-        MainActivity().updateLoginSuccess(message)
+        LoginScreenActivity().updateLoginSuccess(message)
     }
 
     fun notifyOnFailure() {
-        MainActivity().updateLoginMessageError(false)
+        LoginScreenActivity().updateLoginMessageError(false)
     }
 
     private fun post(activity: Activity, body: RequestBody, url: String) {

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_height"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/header_background">
+
+    <ImageView
+        android:id="@+id/avatar"
+        style="@style/headerItem"
+        android:contentDescription="@string/login_screen_logo_description"
+        android:src="@drawable/sidi_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/txt_title"
+        style="@style/headerHomeScreenTitleText"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="@string/header_home_screen_title"
+        app:layout_constraintLeft_toRightOf="@id/avatar"
+        app:layout_constraintRight_toLeftOf="@id/qrcode" />
+
+    <ImageView
+        android:id="@+id/qrcode"
+        style="@style/headerItem"
+        android:contentDescription="@string/login_screen_logo_description"
+        android:src="@drawable/sidi_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

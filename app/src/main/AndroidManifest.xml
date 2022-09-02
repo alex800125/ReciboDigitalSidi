@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Empty">
         <activity
-            android:name=".screens.MainActivity"
+            android:name=".screens.LoginScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
