@@ -2,6 +2,10 @@ package com.example.recibodigitalalexventurini.utils
 
 class ConstantsUtils {
     companion object {
+        val LOGTAG = "RD:"
+
+        val USER_INFO_EXTRAS = "extra_UserInfo"
+
         // API Default items
         val API_PATH = "https://sidi-proj-capacitacao.herokuapp.com"
         val API_VERSION = "/api/v2"

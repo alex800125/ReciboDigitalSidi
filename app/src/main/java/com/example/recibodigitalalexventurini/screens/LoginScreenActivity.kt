@@ -1,5 +1,6 @@
 package com.example.recibodigitalalexventurini.screens
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,10 +16,11 @@ import com.example.recibodigitalalexventurini.utils.ApiServiceUtils
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils
 
 class LoginScreenActivity : AppCompatActivity() {
-    private val TAG = "LoginScreenActivity"
+    private val TAG = ConstantsUtils.LOGTAG + "LoginScreenActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i(TAG, "onCreate()")
         setContentView(R.layout.login_screen)
 
         var userEmailOrPhoneEditText = findViewById<EditText>(R.id.user_email)
@@ -39,7 +41,8 @@ class LoginScreenActivity : AppCompatActivity() {
 
     private fun executeLogin() {
         val user = User()
-        user.email = "alex2@email.com"
+        // TODO por enquanto só esta assim para testes, depois será pego a partir dos campos de texto
+        user.email = "alex3@email.com"
         user.pass = "123"
         ApiServiceUtils().getRequestUserLogin(this, ConstantsUtils.USER_LOGIN, user)
     }
@@ -63,10 +66,12 @@ class LoginScreenActivity : AppCompatActivity() {
         }
     }
 
-    fun updateLoginSuccess(message: String) {
-        //Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    /**
+     * This function was not used because needs more studies about.
+     */
+    fun updateLoginSuccess(activity: Activity?, message: String) {
         Log.i(TAG, message)
-        val homeScreen = Intent(this, HomeScreenActivity::class.java)
-        startActivity(homeScreen)
+        val homeScreen = Intent(activity, HomeScreenActivity::class.java)
+        activity?.startActivity(homeScreen)
     }
 }

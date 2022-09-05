@@ -1,5 +1,7 @@
 package com.example.recibodigitalalexventurini.model
 
+import java.io.Serializable
+
 class User {
 
     // Example user infos:
@@ -17,7 +19,7 @@ class User {
         val email: String,
         val cpf: String,
         val avatar: String
-    )
+    ) : Serializable
 
     var idUser: String? = null
     var name: String? = null
