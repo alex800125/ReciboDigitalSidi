@@ -2,7 +2,7 @@ package com.example.recibodigitalalexventurini.utils
 
 class ConstantsUtils {
     companion object {
-        val LOGTAG = "RD:"
+        val LOGTAG = "ReciptDigital:"
 
         val USER_INFO_EXTRAS = "extra_UserInfo"
 

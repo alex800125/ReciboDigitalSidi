@@ -17,9 +17,28 @@
     <dimen name="login_screen_message_wrong_user_margin_top">10dp</dimen>
     <dimen name="login_screen_message_wrong_user_text_size">12sp</dimen>
 
+    <!-- Common header -->
+    <dimen name="common_header_height">60dp</dimen>
+    <dimen name="common_header_width">100dp</dimen>
+    <dimen name="common_header_padding">5dp</dimen>
+    <dimen name="common_header_text_size_title">20dp</dimen>
+
+    <!-- Header - back button -->
+    <dimen name="header_back_button_height">100dp</dimen>
+    <dimen name="header_back_button_width">100dp</dimen>
+    <dimen name="header_back_button_padding">15dp</dimen>
+
     <!-- Header - Home Screen -->
     <dimen name="header_height">100dp</dimen>
     <dimen name="header_width">100dp</dimen>
     <dimen name="header_padding">5dp</dimen>
-    <dimen name="header_home_screen_text_size_title">20dp</dimen>
+
+    <!-- Create User -->
+    <dimen name="create_user_text_size">20sp</dimen>
+    <dimen name="create_user_margin_top">10dp</dimen>
+    <dimen name="create_user_margin_horizontal_text">10dp</dimen>
+    <dimen name="create_user_margin_horizontal_edittext">20dp</dimen>
+    <dimen name="create_user_terms_service_margin_start">20dp</dimen>
+    <dimen name="create_user_terms_service_margin_end">70dp</dimen>
+    <dimen name="create_user_edittext_height">40dp</dimen>
 </resources>

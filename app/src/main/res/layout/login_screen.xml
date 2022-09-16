@@ -64,7 +64,7 @@
 
     <Button
         android:id="@+id/login"
-        style="@style/loginScreenButton"
+        style="@style/DefaultButton"
         android:layout_marginBottom="@dimen/login_screen_margin_bottom"
         android:text="@string/login_screen_login_button_text"
         app:layout_constraintBottom_toTopOf="@id/new_account"
@@ -73,7 +73,7 @@
 
     <Button
         android:id="@+id/new_account"
-        style="@style/loginScreenButton"
+        style="@style/DefaultButton"
         android:layout_marginBottom="@dimen/login_screen_button_new_account_margin"
         android:text="@string/login_screen_new_account_button_text"
         app:layout_constraintBottom_toBottomOf="parent"

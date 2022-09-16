@@ -12,6 +12,30 @@ class User {
     //   "cpf": "55555555555",
     //   "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1135.jpg"
 
+    constructor(
+        name: String,
+        phoneNumber: String,
+        email: String,
+        cpf: String,
+        password: String,
+        accepTerms: Boolean
+    ) {
+        this.name = name
+        this.phoneNumber = phoneNumber
+        this.email = email
+        this.cpf = cpf
+        this.pass = password
+        this.acceptTerms = accepTerms
+    }
+
+    constructor(
+        email: String,
+        password: String
+    ) {
+        this.email = email
+        this.pass = password
+    }
+
     data class UserInfo(
         val token: String,
         val idUser: String,
@@ -23,6 +47,7 @@ class User {
 
     var idUser: String? = null
     var name: String? = null
+    var phoneNumber: String? = null
     var email: String? = null
     var pass: String? = null
     var cpf: String? = null

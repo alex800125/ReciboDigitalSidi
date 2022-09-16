@@ -40,16 +40,13 @@ class LoginScreenActivity : AppCompatActivity() {
     }
 
     private fun executeLogin() {
-        val user = User()
-        // TODO por enquanto só esta assim para testes, depois será pego a partir dos campos de texto
-        user.email = "alex3@email.com"
-        user.pass = "123"
+        val user = User("alex3@email.com", "123")
         ApiServiceUtils().getRequestUserLogin(this, ConstantsUtils.USER_LOGIN, user)
     }
 
     private fun executeNewAccount() {
-        // TODO implement
-        Toast.makeText(this, "New Account executado", Toast.LENGTH_SHORT).show()
+        Log.i(TAG, "executeNewAccount()")
+        startActivity(Intent(this, CreateUserActivity::class.java))
     }
 
     private fun executeForgotPassword() {

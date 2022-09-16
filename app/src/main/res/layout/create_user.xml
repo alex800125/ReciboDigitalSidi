@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--  Header  -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/create_user_header"
+        style="@style/headerDefault"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/create_user_back_button"
+            style="@style/headerBackButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/create_user_text_header"
+            style="@style/headerTitleText"
+            android:text="@string/header_create_new_account"
+            app:layout_constraintLeft_toRightOf="@id/create_user_back_button"
+            app:layout_constraintRight_toLeftOf="@id/create_user_empty_slot"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/create_user_empty_slot"
+            style="@style/headerEmpty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/create_user_name_text"
+        style="@style/createUserText"
+        android:text="@string/create_user_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_header" />
+
+    <EditText
+        android:id="@+id/create_user_name_edittext"
+        style="@style/createUserEditText"
+        android:autofillHints="name"
+        android:hint="@string/create_user_edittext_name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_name_text" />
+
+    <TextView
+        android:id="@+id/create_user_phone_number_text"
+        style="@style/createUserText"
+        android:text="@string/create_user_phone_number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_name_edittext" />
+
+    <EditText
+        android:id="@+id/create_user_phone_number_edittext"
+        style="@style/createUserEditText"
+        android:autofillHints="name"
+        android:hint="@string/create_user_edittext_phone_number"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_phone_number_text" />
+
+    <TextView
+        android:id="@+id/create_user_email_text"
+        style="@style/createUserText"
+        android:text="@string/create_user_email"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_phone_number_edittext" />
+
+    <EditText
+        android:id="@+id/create_user_email_edittext"
+        style="@style/createUserEditText"
+        android:autofillHints="name"
+        android:hint="@string/create_user_edittext_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_email_text" />
+
+    <TextView
+        android:id="@+id/create_user_cpf_text"
+        style="@style/createUserText"
+        android:text="@string/create_user_cpf"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_email_edittext" />
+
+    <EditText
+        android:id="@+id/create_user_cpf_edittext"
+        style="@style/createUserEditText"
+        android:autofillHints="name"
+        android:hint="@string/create_user_edittext_cpf"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_cpf_text" />
+
+    <TextView
+        android:id="@+id/create_user_password_text"
+        style="@style/createUserText"
+        android:text="@string/create_user_password"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_cpf_edittext" />
+
+    <EditText
+        android:id="@+id/create_user_password_edittext"
+        style="@style/createUserEditText"
+        android:autofillHints="name"
+        android:hint="@string/create_user_edittext_password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_password_text" />
+
+    <TextView
+        android:id="@+id/create_user_confirm_password_text"
+        style="@style/createUserText"
+        android:text="@string/create_user_confirm_password"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_password_edittext" />
+
+    <EditText
+        android:id="@+id/create_user_confirm_password_edittext"
+        style="@style/createUserEditText"
+        android:autofillHints="name"
+        android:hint="@string/create_user_edittext_confirm_password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_confirm_password_text" />
+
+    <TextView
+        android:id="@+id/create_user_terms_service_text"
+        style="@style/createUserTermsServiceText"
+        android:text="@string/create_user_terms_service"
+        app:layout_constraintEnd_toStartOf="@id/create_user_terms_service_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_confirm_password_edittext" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/create_user_terms_service_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/create_user_terms_service_text"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/create_user_terms_service_text"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Button
+        android:id="@+id/create_user_register"
+        style="@style/DefaultButton"
+        android:layout_marginBottom="@dimen/login_screen_margin_bottom"
+        android:text="@string/create_user_register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_terms_service_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

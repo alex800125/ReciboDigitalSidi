@@ -12,6 +12,24 @@
     <string name="login_screen_forgot_password_text">Forgot password?</string>
     <string name="login_screen_message_wrong_user_text">Email or Password is wrong</string>
 
-    <!-- Header - Home screen -->
+    <!-- Header -->
     <string name="header_home_screen_title">Default name</string>
+    <string name="header_create_new_account">Create new account</string>
+    <string name="header_back_button">Back button</string>
+
+    <!-- Create User -->
+    <string name="create_user_name">Name</string>
+    <string name="create_user_edittext_name">Enter your name</string>
+    <string name="create_user_phone_number">Phone number</string>
+    <string name="create_user_edittext_phone_number">Enter your phone number</string>
+    <string name="create_user_email">Email</string>
+    <string name="create_user_edittext_email">Enter your email address</string>
+    <string name="create_user_cpf">CPF</string>
+    <string name="create_user_edittext_cpf">Enter your CPF number</string>
+    <string name="create_user_password">Password</string>
+    <string name="create_user_edittext_password">Enter your password</string>
+    <string name="create_user_confirm_password">Confirm password</string>
+    <string name="create_user_edittext_confirm_password">Confirm your password</string>
+    <string name="create_user_terms_service">I agree with the Terms of Service and Privacy Policy information.</string>
+    <string name="create_user_register">Register!</string>
 </resources>

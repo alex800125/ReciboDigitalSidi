@@ -9,6 +9,6 @@
     <color name="login_screen_forgot_password_text">#6200EE</color>
     <color name="login_screen_message_wrong_user_text">#FF0015</color>
 
-    <!-- Header - Home Screen -->
+    <!-- Header -->
     <color name="header_background">#6200EE</color>
 </resources>

@@ -21,6 +21,8 @@
         </activity>
 
         <activity android:name=".screens.HomeScreenActivity" />
+
+        <activity android:name=".screens.CreateUserActivity" />
     </application>
 
 </manifest>
