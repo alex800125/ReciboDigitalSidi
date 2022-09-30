@@ -9,7 +9,7 @@
         android:id="@+id/avatar"
         style="@style/headerImage"
         android:contentDescription="@string/login_screen_logo_description"
-        android:src="@drawable/sidi_logo"
+        android:src="@drawable/icon_back_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -18,7 +18,7 @@
         style="@style/headerTitleText"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:text="@string/header_home_screen_title"
+        android:text="@string/header_screen_title"
         app:layout_constraintLeft_toRightOf="@id/avatar"
         app:layout_constraintRight_toLeftOf="@id/qrcode" />
 

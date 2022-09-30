@@ -57,7 +57,7 @@
         <item name="android:layout_width">@dimen/header_back_button_width</item>
         <item name="android:padding">@dimen/header_back_button_padding</item>
         <item name="android:contentDescription">@string/header_back_button</item>
-        <item name="android:src">@drawable/back_button</item>
+        <item name="android:src">@drawable/icon_back_button</item>
     </style>
 
     <style name="headerTitleText" parent="ThemeOverlay.AppCompat">

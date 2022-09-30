@@ -13,7 +13,7 @@
     <string name="login_screen_message_wrong_user_text">Email or Password is wrong</string>
 
     <!-- Header -->
-    <string name="header_home_screen_title">Default name</string>
+    <string name="header_screen_title">Default name</string>
     <string name="header_create_new_account">Create new account</string>
     <string name="header_back_button">Back button</string>
 
@@ -32,4 +32,8 @@
     <string name="create_user_edittext_confirm_password">Confirm your password</string>
     <string name="create_user_terms_service">I agree with the Terms of Service and Privacy Policy information.</string>
     <string name="create_user_register">Register!</string>
+
+    <!-- Home Screen -->
+    <string name="home_screen_qrcode">QR Code button</string>
+    <string name="home_screen_add_button">Add category button</string>
 </resources>

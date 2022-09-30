@@ -13,7 +13,7 @@
     <string name="login_screen_message_wrong_user_text">E-mail ou senha errado</string>
 
     <!-- Header -->
-    <string name="header_home_screen_title">Nome padrão</string>
+    <string name="header_screen_title">Nome padrão</string>
     <string name="header_create_new_account">Criar nova conta</string>
     <string name="header_back_button">Botão voltar</string>
 
@@ -32,4 +32,8 @@
     <string name="create_user_edittext_confirm_password">Confirme sua senha</string>
     <string name="create_user_terms_service">Concordo com as informações dos Termos de Serviço e da Política de Privacidade.</string>
     <string name="create_user_register">Criar!</string>
+
+    <!-- Home Screen -->
+    <string name="home_screen_qrcode">Botão QR Code</string>
+    <string name="home_screen_add_button">Botão Adicionar categoria</string>
 </resources>
