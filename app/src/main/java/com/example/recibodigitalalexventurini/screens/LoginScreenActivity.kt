@@ -41,7 +41,7 @@ class LoginScreenActivity : AppCompatActivity() {
 
     private fun executeLogin() {
         val user = User("alex3@email.com", "123")
-        ApiServiceUtils().getRequestUserLogin(this, ConstantsUtils.USER_LOGIN, user)
+        ApiServiceUtils().getRequestUserLogin(this, ConstantsUtils.URL_USER_LOGIN, user)
     }
 
     private fun executeNewAccount() {
