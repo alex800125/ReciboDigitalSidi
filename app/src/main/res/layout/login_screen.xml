@@ -50,12 +50,12 @@
         android:autofillHints="password"
         android:hint="@string/login_screen_password_edittext"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@id/wrong_user"
+        app:layout_constraintBottom_toTopOf="@id/login_error"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/wrong_user"
+        android:id="@+id/login_error"
         style="@style/loginScreenWrongUserText"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/login"

@@ -5,10 +5,9 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.Switch
 import androidx.appcompat.app.AppCompatActivity
 import com.example.recibodigitalalexventurini.R
-import com.example.recibodigitalalexventurini.model.User
+import com.example.recibodigitalalexventurini.model.CreateUser
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils
 import com.google.android.material.switchmaterial.SwitchMaterial
 
@@ -21,6 +20,7 @@ class CreateUserActivity : AppCompatActivity() {
     private var mCpf: EditText? = null
     private var mPassword: EditText? = null
     private var mPasswordConfirmation: EditText? = null
+    private var mTerms: SwitchMaterial? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.i(TAG, "onCreate()")
@@ -28,12 +28,11 @@ class CreateUserActivity : AppCompatActivity() {
         setContentView(R.layout.create_user)
 
         init()
-        val termsService = findViewById<SwitchMaterial>(R.id.create_user_terms_service_switch)
 
         findViewById<Button>(R.id.create_user_register)
             .setOnClickListener {
                 validadeItems(
-                    User(
+                    CreateUser(
                         mName?.text.toString(),
                         mPhoneNumber?.text.toString(),
                         mEmail?.text.toString(),
@@ -41,7 +40,7 @@ class CreateUserActivity : AppCompatActivity() {
                         (if (mPassword?.text.toString()
                                 .equals(mPasswordConfirmation?.text.toString())
                         ) mPassword?.text.toString() else ""),
-                        termsService.isEnabled
+                        (mTerms?.isChecked == true)
                     )
                 )
             }
@@ -53,6 +52,7 @@ class CreateUserActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        Log.i(TAG, "init()")
         mName = findViewById(R.id.create_user_name_edittext)
         mPhoneNumber = findViewById(R.id.create_user_phone_number_edittext)
         mEmail = findViewById(R.id.create_user_email_edittext)
@@ -60,10 +60,19 @@ class CreateUserActivity : AppCompatActivity() {
         mPassword = findViewById(R.id.create_user_password_edittext)
         mPasswordConfirmation =
             findViewById(R.id.create_user_confirm_password_edittext)
+        mTerms = findViewById(R.id.create_user_terms_service_switch)
     }
 
-    private fun validadeItems(user: User) {
-        Log.i(TAG, "validadeItems user.name: " + user.name.toString())
+    private fun validadeItems(createUser: CreateUser) {
+        Log.i(TAG, "validadeItems()")
+        Log.i(
+            TAG, "validadeItems user.name: " + createUser.name.toString() +
+                    "user.phoneNumber: " + createUser.phoneNumber.toString() +
+                    "user.email: " + createUser.email.toString() +
+                    "user.cpf: " + createUser.cpf.toString() +
+                    "user.pass: " + createUser.pass.toString() +
+                    "user.acceptTerms: " + createUser.acceptTerms
+        )
         // TODO implementar validação e enviar pra API
     }
 }

@@ -36,4 +36,8 @@
     <!-- Home Screen -->
     <string name="home_screen_qrcode">QR Code button</string>
     <string name="home_screen_add_button">Add category button</string>
+
+    <!-- Code Message -->
+    <string name="code_message_access_api_error">Error accessing API.</string>
+    <string name="code_message_incorrect_email_or_password">Incorrect email or password.</string>
 </resources>

@@ -20,7 +20,7 @@
     <!-- Create User -->
     <string name="create_user_name">Nome</string>
     <string name="create_user_edittext_name">Digite seu nome</string>
-    <string name="create_user_phone_number">Numero de telefone</string>
+    <string name="create_user_phone_number">Número de telefone</string>
     <string name="create_user_edittext_phone_number">Digite seu número de telefone</string>
     <string name="create_user_email">E-mail</string>
     <string name="create_user_edittext_email">Insira o seu endereço de email</string>
@@ -36,4 +36,8 @@
     <!-- Home Screen -->
     <string name="home_screen_qrcode">Botão QR Code</string>
     <string name="home_screen_add_button">Botão Adicionar categoria</string>
+
+    <!-- Code Message -->
+    <string name="code_message_access_api_error">Erro ao acessar a API.</string>
+    <string name="code_message_incorrect_email_or_password">Senha ou e-mail incorretos.</string>
 </resources>
