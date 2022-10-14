@@ -4,14 +4,15 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.recibodigitalalexventurini.R
-import com.example.recibodigitalalexventurini.model.LoginResponse
+import com.example.recibodigitalalexventurini.api.RetrofitClient
+import com.example.recibodigitalalexventurini.model.*
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils
-
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class HomeScreenActivity : AppCompatActivity() {
     private val TAG = ConstantsUtils.LOGTAG + "HomeScreenActivity"
-
-//    val mActivity: HomeScreenActivity = this
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,18 +21,89 @@ class HomeScreenActivity : AppCompatActivity() {
 
         val user = intent.extras?.get(ConstantsUtils.USER_INFO_EXTRAS) as LoginResponse
 
-        // ApiServiceUtils().getRequestReceipt(ConstantsUtils.URL_RECEIPT, user.token)
-        Log.i(TAG, "onCreate() user.token: " + user.token)
+        if (user.token != "") {
+            RetrofitClient.setAuth(user.token)
+            getReceiptList()
+            getCategoriesList()
+        } else {
+            Log.e(TAG, "Token is null!")
+        }
     }
 
-    fun updateReceipt() {
-//        this.runOnUiThread(Runnable() {
-//            Log.i(TAG, "updateReceipt()")
-//        })
+    private fun getReceiptList() {
+        Log.i(TAG, "getReceiptList()")
+        RetrofitClient.instance.getReceipts()
+            .enqueue(object : Callback<ListReceiptsResponse> {
 
-//        mActivity.runOnUiThread(Runnable {
-//            Log.i(TAG, "updateReceipt()")
-//        })
+                override fun onResponse(
+                    call: Call<ListReceiptsResponse>,
+                    response: Response<ListReceiptsResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        updateReceipt(response.body()?.receipts)
+                    }
+                }
 
+                override fun onFailure(call: Call<ListReceiptsResponse>, t: Throwable) {
+                    Log.e(TAG, "Failed to take receipts t:'${t.message}' call:$call")
+                }
+            })
+    }
+
+    private fun getCategoriesList() {
+        Log.i(TAG, "getCategoriesList()")
+        RetrofitClient.instance.getCategories()
+            .enqueue(object : Callback<ListCategoriesResponse> {
+
+                override fun onResponse(
+                    call: Call<ListCategoriesResponse>,
+                    response: Response<ListCategoriesResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        Log.i(
+                            TAG,
+                            "onResponse() code: " + response.body()?.code +
+                                    " resultMessage: " + response.body()?.resultMessage
+                        )
+                        updateCategories(response.body()?.categories)
+                    }
+                }
+
+                override fun onFailure(call: Call<ListCategoriesResponse>, t: Throwable) {
+                    Log.e(TAG, "Failed to take categories t:'${t.message}' call:$call")
+                }
+            })
+    }
+
+    private fun updateReceipt(receiptList: List<ReceiptResponse>?) {
+        Log.i(TAG, "updateReceipt()")
+
+        // TODO Receives the receipt list and missing the usage about this
+        if (receiptList != null) {
+            for (receipt in receiptList) {
+                Log.i(
+                    TAG, "updateReceipt() id: " + receipt.id +
+                            " idUser: " + receipt.idUser + " value: " + receipt.value
+                )
+            }
+        } else {
+            Log.i(TAG, "updateReceipt() receiptList is null!")
+        }
+    }
+
+    private fun updateCategories(categoriesList: List<CategoryResponse>?) {
+        Log.i(TAG, "updateCategories()")
+
+        // TODO Receives the Category list and missing the usage about this
+        if (categoriesList != null) {
+            for (category in categoriesList) {
+                Log.i(
+                    TAG, "updateCategories() id: " + category.id +
+                            " category: " + category.category + " color: " + category.color
+                )
+            }
+        } else {
+            Log.i(TAG, "updateCategories() categoriesList is null!")
+        }
     }
 }

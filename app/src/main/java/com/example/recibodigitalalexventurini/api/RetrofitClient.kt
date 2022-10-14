@@ -1,22 +1,22 @@
 package com.example.recibodigitalalexventurini.api
 
+import android.util.Log
+import com.example.recibodigitalalexventurini.utils.ConstantsUtils
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils.Companion.API_PATH
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-
-//    private val AUTH =
-//        "Basic " + Base64.encodeToString("belalkhan:123456".toByteArray(), Base64.NO_WRAP)
-//
-//    private const val BASE_URL = "http://192.168.43.207/myapi/public/"
+    private val TAG = ConstantsUtils.LOGTAG + "RetrofitClient"
+    private var mAuth = ""
 
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor { chain ->
             val original = chain.request()
 
             val requestBuilder = original.newBuilder()
+                .addHeader("Authorization", mAuth)
                 .method(original.method, original.body)
 
             val request = requestBuilder.build()
@@ -33,4 +33,8 @@ object RetrofitClient {
         retrofit.create(ApiInterface::class.java)
     }
 
+    fun setAuth(token: String) {
+        Log.i(TAG, "setAuth() token: $token")
+        mAuth = "Bearer $token"
+    }
 }
