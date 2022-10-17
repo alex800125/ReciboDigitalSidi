@@ -28,10 +28,21 @@
     <dimen name="header_back_button_width">100dp</dimen>
     <dimen name="header_back_button_padding">15dp</dimen>
 
-    <!-- Header - Home Screen -->
-    <dimen name="header_height">100dp</dimen>
-    <dimen name="header_width">100dp</dimen>
-    <dimen name="header_padding">5dp</dimen>
+    <!-- Home Screen -->
+    <dimen name="home_screen_header_height">100dp</dimen>
+    <dimen name="home_screen_header_width">100dp</dimen>
+    <dimen name="home_screen_header_padding">5dp</dimen>
+    <dimen name="home_screen_header_name_text_size">25sp</dimen>
+    <dimen name="home_screen_card_view_height">100dp</dimen>
+    <dimen name="home_screen_card_view_margin">5dp</dimen>
+    <dimen name="home_screen_item_zero_width">0dp</dimen>
+    <dimen name="home_screen_card_view_category_count_text_size">20sp</dimen>
+    <dimen name="home_screen_card_view_category_count_margin_top">80dp</dimen>
+    <dimen name="home_screen_card_view_category_count_margin_end">20dp</dimen>
+    <dimen name="home_screen_card_view_category_count_margin_bottom">10dp</dimen>
+    <dimen name="home_screen_card_view_category_name_text_size">25sp</dimen>
+    <dimen name="home_screen_card_view_category_name_margin_top">10dp</dimen>
+    <dimen name="home_screen_card_view_category_name_margin_start">15dp</dimen>
 
     <!-- Create User -->
     <dimen name="create_user_text_size">20sp</dimen>

@@ -36,6 +36,13 @@
     <!-- Home Screen -->
     <string name="home_screen_qrcode">Botão QR Code</string>
     <string name="home_screen_add_button">Botão Adicionar categoria</string>
+    <string name="home_screen_default_category">Categoria padrão</string>
+    <string name="home_screen_all_receipts">Todos os recibos</string>
+    <string name="home_screen_favorite_receipts">Recibos favoritos</string>
+    <string name="home_screen_zero_receipt">0 recibo</string>
+    <string name="home_screen_receipt">%s recibo</string>
+    <string name="home_screen_receipts">%s recibos</string>
+    <string name="home_screen_welcome">Olá, %s</string>
 
     <!-- Code Message -->
     <string name="code_message_access_api_error">Erro ao acessar a API.</string>

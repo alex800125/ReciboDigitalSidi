@@ -11,4 +11,7 @@
 
     <!-- Header -->
     <color name="header_background">#6200EE</color>
+
+    <!-- Home Screen -->
+    <color name="default_card_view_background">#FAFAFA</color>
 </resources>

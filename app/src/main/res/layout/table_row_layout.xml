@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/row_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/home_screen_card_view_margin">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/category_card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/home_screen_card_view_height"
+        android:layout_gravity="center">
+
+        <View
+            android:id="@+id/category_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/default_card_view_background" />
+
+        <TextView
+            android:id="@+id/category_name"
+            style="@style/homeScreenText"
+            android:layout_gravity="top"
+            android:layout_marginStart="@dimen/home_screen_card_view_category_name_margin_start"
+            android:layout_marginTop="@dimen/home_screen_card_view_category_name_margin_top"
+            android:text="@string/home_screen_default_category"
+            android:textSize="@dimen/home_screen_card_view_category_name_text_size" />
+
+        <TextView
+            android:id="@+id/category_receipt_count"
+            style="@style/homeScreenText"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/home_screen_card_view_category_count_margin_end"
+            android:layout_marginBottom="@dimen/home_screen_card_view_category_count_margin_bottom"
+            android:text="@string/home_screen_zero_receipt"
+            android:textSize="@dimen/home_screen_card_view_category_count_text_size" />
+
+    </androidx.cardview.widget.CardView>
+</TableRow>

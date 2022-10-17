@@ -6,6 +6,10 @@ import com.google.gson.annotations.SerializedName
 // "receipts": [...]
 
 data class ListReceiptsResponse(
+    @SerializedName("code")
+    var code: String,
+    @SerializedName("resultMessage")
+    var resultMessage: String,
     @SerializedName("receipts")
     var receipts: List<ReceiptResponse>
 )

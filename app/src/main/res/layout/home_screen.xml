@@ -1,85 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".screens.HomeScreenActivity">
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/home_header"
         android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/header_avatar"
+            android:layout_width="@dimen/home_screen_header_width"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/header_back_button"
+            android:padding="15dp"
+            android:src="@drawable/icon_back_button" />
+
+        <TextView
+            android:id="@+id/header_user_name"
+            style="@style/homeScreenText"
+            android:layout_centerInParent="true"
+            android:text="@string/header_screen_title"
+            android:textSize="@dimen/home_screen_header_name_text_size"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:id="@+id/header_qr_code"
+            android:layout_width="@dimen/home_screen_header_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/home_screen_qrcode"
+            android:padding="@dimen/home_screen_card_view_margin"
+            android:src="@drawable/icon_qr_code" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/all_receipts"
+        android:layout_width="@dimen/home_screen_item_zero_width"
+        android:layout_height="@dimen/home_screen_card_view_height"
+        android:layout_marginHorizontal="@dimen/home_screen_card_view_margin"
+        android:background="@color/login_screen_button_background_tint"
+        android:contentDescription="@string/home_screen_all_receipts"
+        app:layout_constraintEnd_toStartOf="@id/middle_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_header" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle_guideline"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize">
+    <ImageView
+        android:id="@+id/favorite_receipts"
+        android:layout_width="@dimen/home_screen_item_zero_width"
+        android:layout_height="@dimen/home_screen_card_view_height"
+        android:layout_marginHorizontal="@dimen/home_screen_card_view_margin"
+        android:background="@color/login_screen_message_wrong_user_text"
+        android:contentDescription="@string/home_screen_favorite_receipts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/middle_guideline"
+        app:layout_constraintTop_toBottomOf="@id/home_header" />
 
-            <ImageView
-                android:id="@+id/avatar"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:contentDescription="@string/header_back_button"
-                android:padding="15dp"
-                android:src="@drawable/icon_back_button" />
+    <ScrollView
+        android:id="@+id/categories_scrollview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#737373"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/all_receipts">
 
-            <TextView
-                android:id="@+id/txt_title"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="@string/header_screen_title" />
+        <TableLayout
+            android:id="@+id/categories_table_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </ScrollView>
 
-            <ImageView
-                android:id="@+id/qrcode"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:contentDescription="@string/home_screen_qrcode"
-                android:padding="5dp"
-                android:src="@drawable/icon_qr_code" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/TextView"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:background="@color/login_screen_button_background_tint" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/add_category"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:contentDescription="@string/home_screen_add_button"
-                android:padding="5dp"
-                android:src="@drawable/icon_add" />
-        </RelativeLayout>
-    </LinearLayout>
-
-    <!--    <androidx.recyclerview.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--        android:id="@+id/recycler_view"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
-
-    <!--    <RelativeLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content">-->
-
-
-    <!--    </RelativeLayout>-->
-</ScrollView>
+    <ImageView
+        android:id="@+id/add_category"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/home_screen_item_zero_width"
+        android:contentDescription="@string/home_screen_add_button"
+        android:padding="10dp"
+        android:src="@drawable/icon_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline" />
+</androidx.constraintlayout.widget.ConstraintLayout>

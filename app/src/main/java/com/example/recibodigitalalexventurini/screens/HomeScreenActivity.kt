@@ -1,8 +1,15 @@
 package com.example.recibodigitalalexventurini.screens
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.RelativeLayout
+import android.widget.TableLayout
+import android.widget.TableRow
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import com.example.recibodigitalalexventurini.R
 import com.example.recibodigitalalexventurini.api.RetrofitClient
 import com.example.recibodigitalalexventurini.model.*
@@ -21,13 +28,18 @@ class HomeScreenActivity : AppCompatActivity() {
 
         val user = intent.extras?.get(ConstantsUtils.USER_INFO_EXTRAS) as LoginResponse
 
-        if (user.token != "") {
-            RetrofitClient.setAuth(user.token)
-            getReceiptList()
-            getCategoriesList()
-        } else {
-            Log.e(TAG, "Token is null!")
-        }
+        updateUserName(user.name)
+
+        RetrofitClient.setAuth(user.token)
+        getReceiptList()
+        getCategoriesList()
+    }
+
+    private fun updateUserName(name: String) {
+        Log.i(TAG, "updateUserName() name: $name")
+        findViewById<RelativeLayout>(R.id.home_header)
+            .findViewById<TextView>(R.id.header_user_name).text =
+            String.format(getString(R.string.home_screen_welcome), name)
     }
 
     private fun getReceiptList() {
@@ -40,6 +52,11 @@ class HomeScreenActivity : AppCompatActivity() {
                     response: Response<ListReceiptsResponse>
                 ) {
                     if (response.isSuccessful) {
+                        Log.i(
+                            TAG,
+                            "getReceiptList() onResponse() code: " + response.body()?.code +
+                                    " resultMessage: " + response.body()?.resultMessage
+                        )
                         updateReceipt(response.body()?.receipts)
                     }
                 }
@@ -62,7 +79,7 @@ class HomeScreenActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         Log.i(
                             TAG,
-                            "onResponse() code: " + response.body()?.code +
+                            "getCategoriesList() onResponse() code: " + response.body()?.code +
                                     " resultMessage: " + response.body()?.resultMessage
                         )
                         updateCategories(response.body()?.categories)
@@ -93,17 +110,37 @@ class HomeScreenActivity : AppCompatActivity() {
 
     private fun updateCategories(categoriesList: List<CategoryResponse>?) {
         Log.i(TAG, "updateCategories()")
-
-        // TODO Receives the Category list and missing the usage about this
         if (categoriesList != null) {
             for (category in categoriesList) {
-                Log.i(
-                    TAG, "updateCategories() id: " + category.id +
-                            " category: " + category.category + " color: " + category.color
-                )
+                populateTable(category)
             }
         } else {
             Log.i(TAG, "updateCategories() categoriesList is null!")
         }
+    }
+
+    private fun populateTable(category: CategoryResponse) {
+        Log.i(
+            TAG, "populateTable() id: " + category.id + " category: " + category.category +
+                    " color: " + category.color + " countReceipts: " + category.countReceipts
+        )
+
+        val tableLayout = findViewById<TableLayout>(R.id.categories_table_layout)
+        val tableRowLayout = View.inflate(this, R.layout.table_row_layout, null) as TableRow
+        val cardView = tableRowLayout.findViewById<CardView>(R.id.category_card_view)
+
+        cardView.findViewById<View>(R.id.category_background)
+            .setBackgroundColor(Color.parseColor(category.color))
+
+        cardView.findViewById<TextView>(R.id.category_name).text = category.category
+
+        cardView.findViewById<TextView>(R.id.category_receipt_count).text =
+            if (category.countReceipts == 0) {
+                String.format(getString(R.string.home_screen_receipt), category.countReceipts)
+            } else {
+                String.format(getString(R.string.home_screen_receipts), category.countReceipts)
+            }
+
+        tableLayout.addView(tableRowLayout)
     }
 }
