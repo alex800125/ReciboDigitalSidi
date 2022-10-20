@@ -26,8 +26,8 @@
             style="@style/homeScreenText"
             android:layout_centerInParent="true"
             android:text="@string/header_screen_title"
-            android:textSize="@dimen/home_screen_header_name_text_size"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="@dimen/home_screen_header_name_text_size" />
 
         <ImageView
             android:id="@+id/header_qr_code"
@@ -42,11 +42,12 @@
 
     <ImageView
         android:id="@+id/all_receipts"
-        android:layout_width="@dimen/home_screen_item_zero_width"
+        android:layout_width="@dimen/empty_size"
         android:layout_height="@dimen/home_screen_card_view_height"
         android:layout_marginHorizontal="@dimen/home_screen_card_view_margin"
         android:background="@color/login_screen_button_background_tint"
         android:contentDescription="@string/home_screen_all_receipts"
+        android:onClick="getAllReceipts"
         app:layout_constraintEnd_toStartOf="@id/middle_guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_header" />
@@ -60,7 +61,7 @@
 
     <ImageView
         android:id="@+id/favorite_receipts"
-        android:layout_width="@dimen/home_screen_item_zero_width"
+        android:layout_width="@dimen/empty_size"
         android:layout_height="@dimen/home_screen_card_view_height"
         android:layout_marginHorizontal="@dimen/home_screen_card_view_margin"
         android:background="@color/login_screen_message_wrong_user_text"
@@ -69,22 +70,16 @@
         app:layout_constraintStart_toEndOf="@id/middle_guideline"
         app:layout_constraintTop_toBottomOf="@id/home_header" />
 
-    <ScrollView
-        android:id="@+id/categories_scrollview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#737373"
-        android:fillViewport="true"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/empty_size"
+        android:layout_marginTop="@dimen/empty_size"
         app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/all_receipts">
-
-        <TableLayout
-            android:id="@+id/categories_table_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@id/all_receipts"
+        tools:listitem="@layout/category_card_view" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontal_guideline"
@@ -96,9 +91,9 @@
     <ImageView
         android:id="@+id/add_category"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/home_screen_item_zero_width"
+        android:layout_height="@dimen/empty_size"
         android:contentDescription="@string/home_screen_add_button"
-        android:padding="10dp"
+        android:padding="@dimen/home_screen_add_button_padding"
         android:src="@drawable/icon_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

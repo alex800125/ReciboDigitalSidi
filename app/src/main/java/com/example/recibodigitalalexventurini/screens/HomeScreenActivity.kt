@@ -1,15 +1,14 @@
 package com.example.recibodigitalalexventurini.screens
 
-import android.graphics.Color
+import com.example.recibodigitalalexventurini.adapter.CategoryAdapter
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.RelativeLayout
-import android.widget.TableLayout
-import android.widget.TableRow
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.recibodigitalalexventurini.R
 import com.example.recibodigitalalexventurini.api.RetrofitClient
 import com.example.recibodigitalalexventurini.model.*
@@ -33,6 +32,10 @@ class HomeScreenActivity : AppCompatActivity() {
         RetrofitClient.setAuth(user.token)
         getReceiptList()
         getCategoriesList()
+    }
+
+    fun getAllReceipts(view: View) {
+        Log.i(TAG, "getAllReceipts()")
     }
 
     private fun updateUserName(name: String) {
@@ -111,36 +114,12 @@ class HomeScreenActivity : AppCompatActivity() {
     private fun updateCategories(categoriesList: List<CategoryResponse>?) {
         Log.i(TAG, "updateCategories()")
         if (categoriesList != null) {
-            for (category in categoriesList) {
-                populateTable(category)
-            }
+            val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
+            val adapter = CategoryAdapter(categoriesList)
+            recyclerview.layoutManager = LinearLayoutManager(this)
+            recyclerview.adapter = adapter
         } else {
             Log.i(TAG, "updateCategories() categoriesList is null!")
         }
-    }
-
-    private fun populateTable(category: CategoryResponse) {
-        Log.i(
-            TAG, "populateTable() id: " + category.id + " category: " + category.category +
-                    " color: " + category.color + " countReceipts: " + category.countReceipts
-        )
-
-        val tableLayout = findViewById<TableLayout>(R.id.categories_table_layout)
-        val tableRowLayout = View.inflate(this, R.layout.table_row_layout, null) as TableRow
-        val cardView = tableRowLayout.findViewById<CardView>(R.id.category_card_view)
-
-        cardView.findViewById<View>(R.id.category_background)
-            .setBackgroundColor(Color.parseColor(category.color))
-
-        cardView.findViewById<TextView>(R.id.category_name).text = category.category
-
-        cardView.findViewById<TextView>(R.id.category_receipt_count).text =
-            if (category.countReceipts == 0) {
-                String.format(getString(R.string.home_screen_receipt), category.countReceipts)
-            } else {
-                String.format(getString(R.string.home_screen_receipts), category.countReceipts)
-            }
-
-        tableLayout.addView(tableRowLayout)
     }
 }

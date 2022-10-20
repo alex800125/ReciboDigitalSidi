@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="empty_size">0dp</dimen>
+
     <!-- Login Screen -->
     <dimen name="login_screen_logo_width">200dp</dimen>
     <dimen name="login_screen_text_size_title">30sp</dimen>
@@ -35,7 +37,6 @@
     <dimen name="home_screen_header_name_text_size">25sp</dimen>
     <dimen name="home_screen_card_view_height">100dp</dimen>
     <dimen name="home_screen_card_view_margin">5dp</dimen>
-    <dimen name="home_screen_item_zero_width">0dp</dimen>
     <dimen name="home_screen_card_view_category_count_text_size">20sp</dimen>
     <dimen name="home_screen_card_view_category_count_margin_top">80dp</dimen>
     <dimen name="home_screen_card_view_category_count_margin_end">20dp</dimen>
@@ -43,6 +44,7 @@
     <dimen name="home_screen_card_view_category_name_text_size">25sp</dimen>
     <dimen name="home_screen_card_view_category_name_margin_top">10dp</dimen>
     <dimen name="home_screen_card_view_category_name_margin_start">15dp</dimen>
+    <dimen name="home_screen_add_button_padding">10dp</dimen>
 
     <!-- Create User -->
     <dimen name="create_user_text_size">20sp</dimen>
@@ -52,4 +54,10 @@
     <dimen name="create_user_terms_service_margin_start">20dp</dimen>
     <dimen name="create_user_terms_service_margin_end">70dp</dimen>
     <dimen name="create_user_edittext_height">40dp</dimen>
+
+    <!--  Card view  -->
+    <dimen name="card_view_height">100dp</dimen>
+    <dimen name="card_view_margin">10dp</dimen>
+    <dimen name="card_view_elevation">6dp</dimen>
+    <dimen name="card_view_corner_radius">8dp</dimen>
 </resources>

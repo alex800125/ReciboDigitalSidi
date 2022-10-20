@@ -2,6 +2,7 @@ package com.example.recibodigitalalexventurini.utils
 
 import android.app.Activity
 import android.app.ProgressDialog
+import com.example.recibodigitalalexventurini.R
 
 class Utils {
 
