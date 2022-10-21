@@ -1,5 +1,6 @@
 package com.example.recibodigitalalexventurini.screens
 
+import android.content.Intent
 import com.example.recibodigitalalexventurini.adapter.CategoryAdapter
 import android.os.Bundle
 import android.util.Log
@@ -30,12 +31,19 @@ class HomeScreenActivity : AppCompatActivity() {
         updateUserName(user.name)
 
         RetrofitClient.setAuth(user.token)
-        getReceiptList()
         getCategoriesList()
+    }
+
+    fun backButton(view: View) {
+        Log.i(TAG, "getAllReceipts()")
+        onBackPressed()
     }
 
     fun getAllReceipts(view: View) {
         Log.i(TAG, "getAllReceipts()")
+
+        val allReceiptsScreen = Intent(this, AllReceiptsActivity::class.java)
+        this.startActivity(allReceiptsScreen)
     }
 
     private fun updateUserName(name: String) {
@@ -43,31 +51,6 @@ class HomeScreenActivity : AppCompatActivity() {
         findViewById<RelativeLayout>(R.id.home_header)
             .findViewById<TextView>(R.id.header_user_name).text =
             String.format(getString(R.string.home_screen_welcome), name)
-    }
-
-    private fun getReceiptList() {
-        Log.i(TAG, "getReceiptList()")
-        RetrofitClient.instance.getReceipts()
-            .enqueue(object : Callback<ListReceiptsResponse> {
-
-                override fun onResponse(
-                    call: Call<ListReceiptsResponse>,
-                    response: Response<ListReceiptsResponse>
-                ) {
-                    if (response.isSuccessful) {
-                        Log.i(
-                            TAG,
-                            "getReceiptList() onResponse() code: " + response.body()?.code +
-                                    " resultMessage: " + response.body()?.resultMessage
-                        )
-                        updateReceipt(response.body()?.receipts)
-                    }
-                }
-
-                override fun onFailure(call: Call<ListReceiptsResponse>, t: Throwable) {
-                    Log.e(TAG, "Failed to take receipts t:'${t.message}' call:$call")
-                }
-            })
     }
 
     private fun getCategoriesList() {
@@ -95,26 +78,10 @@ class HomeScreenActivity : AppCompatActivity() {
             })
     }
 
-    private fun updateReceipt(receiptList: List<ReceiptResponse>?) {
-        Log.i(TAG, "updateReceipt()")
-
-        // TODO Receives the receipt list and missing the usage about this
-        if (receiptList != null) {
-            for (receipt in receiptList) {
-                Log.i(
-                    TAG, "updateReceipt() id: " + receipt.id +
-                            " idUser: " + receipt.idUser + " value: " + receipt.value
-                )
-            }
-        } else {
-            Log.i(TAG, "updateReceipt() receiptList is null!")
-        }
-    }
-
     private fun updateCategories(categoriesList: List<CategoryResponse>?) {
         Log.i(TAG, "updateCategories()")
         if (categoriesList != null) {
-            val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
+            val recyclerview = findViewById<RecyclerView>(R.id.category_recyclerview)
             val adapter = CategoryAdapter(categoriesList)
             recyclerview.layoutManager = LinearLayoutManager(this)
             recyclerview.adapter = adapter

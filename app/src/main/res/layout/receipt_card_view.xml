@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/receipt_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/card_view_height"
+    android:layout_margin="@dimen/card_view_margin"
+    app:cardCornerRadius="@dimen/card_view_corner_radius"
+    app:cardElevation="@dimen/card_view_elevation">
+
+    <View
+        android:id="@+id/category_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/default_card_view_background" />
+
+    <ImageView
+        android:id="@+id/receipt_merchant_image"
+        android:layout_width="@dimen/all_screen_card_view_receipt_merchant_image_size"
+        android:layout_height="@dimen/all_screen_card_view_receipt_merchant_image_size"
+        android:layout_margin="@dimen/all_screen_card_view_receipt_merchant_image_margin"
+        android:contentDescription="@string/all_receipts_merchant_image"
+        android:src="@drawable/icon_image_default" />
+
+    <TextView
+        android:id="@+id/receipt_merchant_name"
+        style="@style/cardViewText"
+        android:layout_gravity="top"
+        android:layout_marginStart="@dimen/all_screen_card_view_receipt_margin_start"
+        android:layout_marginTop="@dimen/all_screen_card_view_receipt_margin_top"
+        android:text="@string/all_receipts_default_merchant_name"
+        android:textSize="@dimen/all_screen_card_view_receipt_merchant_name_text_size" />
+
+    <TextView
+        android:id="@+id/receipt_value"
+        style="@style/cardViewText"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="@dimen/all_screen_card_view_receipt_margin_end"
+        android:text="@string/all_receipts_default_value"
+        android:textSize="@dimen/all_screen_card_view_receipt_text_size" />
+
+    <TextView
+        android:id="@+id/receipt_date"
+        style="@style/cardViewText"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/all_screen_card_view_receipt_margin_start"
+        android:layout_marginBottom="@dimen/all_screen_card_view_receipt_margin_bottom"
+        android:text="@string/all_receipts_default_date"
+        android:textSize="@dimen/all_screen_card_view_receipt_text_size" />
+
+</androidx.cardview.widget.CardView>

@@ -1,18 +1,15 @@
 package com.example.recibodigitalalexventurini.adapter
 
 import android.graphics.Color
-import android.provider.Settings.System.getString
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.content.res.TypedArrayUtils.getString
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recibodigitalalexventurini.R
 import com.example.recibodigitalalexventurini.model.CategoryResponse
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils
-import com.example.recibodigitalalexventurini.utils.Utils
 
 
 class CategoryAdapter(private val mList: List<CategoryResponse>) :

@@ -96,14 +96,8 @@
         <item name="android:layout_marginEnd">@dimen/create_user_terms_service_margin_end</item>
     </style>
 
-    <!-- Home screen -->
-    <style name="headerImage" parent="ThemeOverlay.AppCompat">
-        <item name="android:layout_height">@dimen/home_screen_header_height</item>
-        <item name="android:layout_width">@dimen/home_screen_header_width</item>
-        <item name="android:padding">@dimen/home_screen_header_padding</item>
-    </style>
-
-    <style name="homeScreenText" parent="ThemeOverlay.AppCompat">
+    <!-- Card View -->
+    <style name="cardViewText" parent="ThemeOverlay.AppCompat">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textColor">@color/default_text</item>

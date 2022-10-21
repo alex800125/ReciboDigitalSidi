@@ -14,24 +14,25 @@
 
         <ImageView
             android:id="@+id/header_avatar"
-            android:layout_width="@dimen/home_screen_header_width"
+            android:layout_width="@dimen/header_width"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:contentDescription="@string/header_back_button"
-            android:padding="15dp"
+            android:onClick="backButton"
+            android:padding="@dimen/header_padding"
             android:src="@drawable/icon_back_button" />
 
         <TextView
             android:id="@+id/header_user_name"
-            style="@style/homeScreenText"
+            style="@style/cardViewText"
             android:layout_centerInParent="true"
             android:text="@string/header_screen_title"
             android:textAlignment="center"
-            android:textSize="@dimen/home_screen_header_name_text_size" />
+            android:textSize="@dimen/header_name_text_size" />
 
         <ImageView
             android:id="@+id/header_qr_code"
-            android:layout_width="@dimen/home_screen_header_width"
+            android:layout_width="@dimen/header_width"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
@@ -71,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@id/home_header" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+        android:id="@+id/category_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="@dimen/empty_size"
         android:layout_marginTop="@dimen/empty_size"

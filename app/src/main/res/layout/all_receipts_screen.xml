@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.AllReceiptsActivity">
+
+    <RelativeLayout
+        android:id="@+id/all_receipts_header"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/header_avatar"
+            android:layout_width="@dimen/header_width"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/header_back_button"
+            android:onClick="backButton"
+            android:padding="@dimen/header_padding"
+            android:src="@drawable/icon_back_button" />
+
+        <TextView
+            android:id="@+id/header_user_name"
+            style="@style/cardViewText"
+            android:layout_centerInParent="true"
+            android:text="@string/header_screen_all_receipts"
+            android:textAlignment="center"
+            android:textSize="@dimen/header_name_text_size" />
+
+    </RelativeLayout>
+
+    <!-- TODO inserir icone da lupa -->
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/all_screen_edit_text_search_height"
+        android:layout_margin="@dimen/all_screen_edit_text_search_margin"
+        android:autofillHints="name"
+        android:hint="@string/all_receipts_search"
+        app:layout_constraintBottom_toTopOf="@id/all_receipts_recyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/all_receipts_header" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/all_receipts_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/empty_size"
+        android:layout_marginTop="@dimen/empty_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        tools:listitem="@layout/receipt_card_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

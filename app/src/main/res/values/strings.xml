@@ -47,4 +47,12 @@
     <!-- Code Message -->
     <string name="code_message_access_api_error">Error accessing API.</string>
     <string name="code_message_incorrect_email_or_password">Incorrect email or password.</string>
+
+    <!-- All Receipts -->
+    <string name="header_screen_all_receipts">All Receipts</string>
+    <string name="all_receipts_search">Search a receipt…</string>
+    <string name="all_receipts_merchant_image">Merchant image</string>
+    <string name="all_receipts_default_merchant_name">Merchant name</string>
+    <string name="all_receipts_default_value">$10</string>
+    <string name="all_receipts_default_date">01/01/2000</string>
 </resources>
