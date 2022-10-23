@@ -4,7 +4,13 @@ class ConstantsUtils {
     companion object {
         const val LOGTAG = "ReciptDigital:"
 
-        const val USER_INFO_EXTRAS = "extra_UserInfo"
+        fun teste(){
+
+        }
+
+        const val USER_EXTRA = "extra_user"
+        const val RECEIPTS_EXTRA = "extra_receipts"
+        const val RECEIPT_DETAILS_EXTRA = "extra_details_receipt"
 
         const val EMPTY_STRING = ""
 

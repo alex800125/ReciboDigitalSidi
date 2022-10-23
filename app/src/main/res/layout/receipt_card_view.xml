@@ -9,18 +9,18 @@
     app:cardElevation="@dimen/card_view_elevation">
 
     <View
-        android:id="@+id/category_background"
+        android:id="@+id/receipt_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@color/default_card_view_background" />
 
     <ImageView
-        android:id="@+id/receipt_merchant_image"
+        android:id="@+id/receipt_merchant_icon"
         android:layout_width="@dimen/all_screen_card_view_receipt_merchant_image_size"
         android:layout_height="@dimen/all_screen_card_view_receipt_merchant_image_size"
         android:layout_margin="@dimen/all_screen_card_view_receipt_merchant_image_margin"
-        android:contentDescription="@string/all_receipts_merchant_image"
+        android:contentDescription="@string/all_receipts_merchant_icon"
         android:src="@drawable/icon_image_default" />
 
     <TextView

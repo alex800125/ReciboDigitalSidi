@@ -57,6 +57,7 @@
         <item name="android:padding">@dimen/header_back_button_padding</item>
         <item name="android:contentDescription">@string/header_back_button</item>
         <item name="android:src">@drawable/icon_back_button</item>
+        <item name="android:layout_centerVertical">true</item>
     </style>
 
     <style name="headerTitleText" parent="ThemeOverlay.AppCompat">
@@ -96,11 +97,19 @@
         <item name="android:layout_marginEnd">@dimen/create_user_terms_service_margin_end</item>
     </style>
 
-    <!-- Card View -->
-    <style name="cardViewText" parent="ThemeOverlay.AppCompat">
+    <!-- Default Text -->
+    <style name="DefaultText" parent="ThemeOverlay.AppCompat">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textColor">@color/default_text</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <!-- Subtext -->
+    <style name="subText" parent="DefaultText" >
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Card View -->
+    <style name="cardViewText" parent="DefaultText" />
 </resources>

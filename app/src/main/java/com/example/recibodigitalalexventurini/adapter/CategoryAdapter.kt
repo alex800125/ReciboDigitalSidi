@@ -11,7 +11,6 @@ import com.example.recibodigitalalexventurini.R
 import com.example.recibodigitalalexventurini.model.CategoryResponse
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils
 
-
 class CategoryAdapter(private val mList: List<CategoryResponse>) :
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
     private val TAG = ConstantsUtils.LOGTAG + "CategoryAdapter"

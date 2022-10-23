@@ -1,6 +1,7 @@
 package com.example.recibodigitalalexventurini.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 // Example Receipts:
 // "receipts": [...]
@@ -12,7 +13,7 @@ data class ListReceiptsResponse(
     var resultMessage: String,
     @SerializedName("receipts")
     var receipts: List<ReceiptResponse>
-)
+) : Serializable
 
 // Example Receipt:
 //    "id": "63113df734626f6711c13040",
@@ -56,4 +57,4 @@ data class ReceiptResponse(
     var message: String,
     @SerializedName("categories")
     var categories: List<CategoryResponse>
-)
+) : Serializable

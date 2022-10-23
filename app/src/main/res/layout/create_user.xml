@@ -6,32 +6,30 @@
     android:layout_height="match_parent">
 
     <!--  Header  -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:id="@+id/create_user_header"
-        style="@style/headerDefault"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/create_user_back_button"
+            android:id="@+id/header_back_button"
             style="@style/headerBackButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:onClick="backButton" />
 
         <TextView
             android:id="@+id/create_user_text_header"
-            style="@style/headerTitleText"
+            style="@style/DefaultText"
+            android:layout_centerInParent="true"
             android:text="@string/header_create_new_account"
-            app:layout_constraintLeft_toRightOf="@id/create_user_back_button"
-            app:layout_constraintRight_toLeftOf="@id/create_user_empty_slot"
-            tools:ignore="MissingConstraints" />
+            android:textAlignment="center"
+            android:textSize="@dimen/header_name_text_size" />
 
         <ImageView
             android:id="@+id/create_user_empty_slot"
-            style="@style/headerEmpty"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            style="@style/headerEmpty" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/create_user_name_text"

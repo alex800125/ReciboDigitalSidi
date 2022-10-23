@@ -19,10 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".screens.HomeScreenActivity" />
         <activity android:name=".screens.CreateUserActivity" />
         <activity android:name=".screens.AllReceiptsActivity" />
+        <activity android:name=".screens.ReceiptDetailsActivity" />
     </application>
 
 </manifest>

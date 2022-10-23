@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.ReceiptDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/receipt_details_header"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/header_back_button"
+            style="@style/headerBackButton"
+            android:onClick="backButton" />
+
+        <TextView
+            android:id="@+id/header_name"
+            style="@style/DefaultText"
+            android:layout_centerInParent="true"
+            android:text="@string/header_receipt_name"
+            android:textAlignment="center"
+            android:textSize="@dimen/header_name_text_size" />
+
+        <ImageView
+            android:id="@+id/header_share"
+            android:layout_width="@dimen/header_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/header_receipt_share"
+            android:padding="@dimen/header_share_padding"
+            android:src="@drawable/icon_share" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/receipt_detail_merchant_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/receipt_details_merchant_image_height"
+        android:contentDescription="@string/receipt_details_merchant_image"
+        android:padding="@dimen/receipt_details_merchant_image_padding"
+        android:src="@drawable/icon_image_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/receipt_details_header" />
+
+    <TextView
+        android:id="@+id/receipt_detail_merchant_name"
+        style="@style/DefaultText"
+        android:layout_marginTop="@dimen/receipt_details_margin_top"
+        android:text="@string/receipt_details_default_merchant_name"
+        android:textSize="@dimen/receipt_details_merchant_name_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/receipt_detail_merchant_image" />
+
+    <TextView
+        android:id="@+id/receipt_detail_value"
+        style="@style/DefaultText"
+        android:layout_marginTop="@dimen/receipt_details_margin_top"
+        android:text="@string/receipt_details_default_value"
+        android:textSize="@dimen/receipt_details_value_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/receipt_detail_merchant_name" />
+
+    <TextView
+        android:id="@+id/receipt_detail_date"
+        style="@style/subText"
+        android:layout_marginTop="@dimen/receipt_details_margin_top"
+        android:text="@string/receipt_details_default_date"
+        android:textSize="@dimen/receipt_details_date_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/receipt_detail_value" />
+
+    <TextView
+        android:id="@+id/receipt_detail_payment"
+        style="@style/subText"
+        android:layout_marginTop="@dimen/receipt_details_margin_top"
+        android:text="@string/receipt_details_default_payment"
+        android:textSize="@dimen/receipt_details_payment_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/receipt_detail_date" />
+
+    <TextView
+        android:id="@+id/receipt_detail_authentication_code"
+        style="@style/subText"
+        android:layout_marginTop="@dimen/receipt_details_margin_top"
+        android:text="@string/receipt_details_default_authentication_code"
+        android:textSize="@dimen/receipt_details_payment_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/receipt_detail_payment" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/receipt_detail_favorite"
+        android:layout_width="@dimen/empty_size"
+        android:layout_height="@dimen/empty_size"
+        android:contentDescription="@string/receipt_details_favorite"
+        android:onClick="executeFavorite"
+        android:src="@drawable/icon_favorite"
+        app:layout_constraintBottom_toTopOf="@id/receipt_detail_favorite_text"
+        app:layout_constraintEnd_toStartOf="@id/middle_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline" />
+
+    <TextView
+        android:id="@+id/receipt_detail_favorite_text"
+        style="@style/subText"
+        android:layout_marginBottom="@dimen/receipt_details_margin_bottom"
+        android:text="@string/receipt_details_favorite"
+        android:textSize="@dimen/receipt_details_icon_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/middle_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/receipt_detail_favorite" />
+
+    <ImageView
+        android:id="@+id/receipt_detail_add_category"
+        android:layout_width="@dimen/empty_size"
+        android:layout_height="@dimen/empty_size"
+        android:contentDescription="@string/receipt_details_add_category"
+        android:onClick="executeAddCategory"
+        android:src="@drawable/icon_folder"
+        app:layout_constraintBottom_toTopOf="@id/receipt_detail_add_category_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/middle_guideline"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline" />
+
+    <TextView
+        android:id="@+id/receipt_detail_add_category_text"
+        style="@style/subText"
+        android:layout_marginBottom="@dimen/receipt_details_margin_bottom"
+        android:text="@string/receipt_details_add_category"
+        android:textSize="@dimen/receipt_details_icon_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/middle_guideline"
+        app:layout_constraintTop_toBottomOf="@id/receipt_detail_add_category" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

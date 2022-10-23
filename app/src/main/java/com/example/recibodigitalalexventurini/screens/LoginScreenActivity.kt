@@ -96,7 +96,7 @@ class LoginScreenActivity : AppCompatActivity() {
         Log.i(TAG, "updateLoginSuccess()")
 
         val homeScreen = Intent(this, HomeScreenActivity::class.java)
-        homeScreen.putExtra(ConstantsUtils.USER_INFO_EXTRAS, loginResponse)
+        homeScreen.putExtra(ConstantsUtils.USER_EXTRA, loginResponse)
         this.startActivity(homeScreen)
     }
 }

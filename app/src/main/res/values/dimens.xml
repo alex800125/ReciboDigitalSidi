@@ -25,13 +25,15 @@
     <dimen name="common_header_padding">5dp</dimen>
     <dimen name="common_header_text_size_title">20dp</dimen>
 
-    <!-- Header - back button -->
+    <!-- Header -->
     <dimen name="header_back_button_height">100dp</dimen>
     <dimen name="header_back_button_width">100dp</dimen>
     <dimen name="header_back_button_padding">15dp</dimen>
     <dimen name="header_height">100dp</dimen>
     <dimen name="header_width">100dp</dimen>
     <dimen name="header_padding">15dp</dimen>
+    <dimen name="header_avatar_padding">5dp</dimen>
+    <dimen name="header_share_padding">10dp</dimen>
     <dimen name="header_name_text_size">25sp</dimen>
 
     <!-- Home Screen -->
@@ -72,4 +74,15 @@
     <dimen name="all_screen_card_view_receipt_margin_top">15dp</dimen>
     <dimen name="all_screen_edit_text_search_height">50dp</dimen>
     <dimen name="all_screen_edit_text_search_margin">10dp</dimen>
+
+    <!-- Receipt details -->
+    <dimen name="receipt_details_merchant_image_height">400dp</dimen>
+    <dimen name="receipt_details_merchant_image_padding">10dp</dimen>
+    <dimen name="receipt_details_margin_top">10dp</dimen>
+    <dimen name="receipt_details_margin_bottom">10dp</dimen>
+    <dimen name="receipt_details_merchant_name_text_size">30sp</dimen>
+    <dimen name="receipt_details_value_text_size">30sp</dimen>
+    <dimen name="receipt_details_date_text_size">15sp</dimen>
+    <dimen name="receipt_details_payment_text_size">15sp</dimen>
+    <dimen name="receipt_details_icon_text_size">15sp</dimen>
 </resources>

@@ -13,23 +13,17 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/header_avatar"
-            android:layout_width="@dimen/header_width"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:contentDescription="@string/header_back_button"
-            android:onClick="backButton"
-            android:padding="@dimen/header_padding"
-            android:src="@drawable/icon_back_button" />
+            android:id="@+id/header_back_button"
+            style="@style/headerBackButton"
+            android:onClick="backButton" />
 
         <TextView
             android:id="@+id/header_user_name"
-            style="@style/cardViewText"
+            style="@style/DefaultText"
             android:layout_centerInParent="true"
             android:text="@string/header_screen_all_receipts"
             android:textAlignment="center"
             android:textSize="@dimen/header_name_text_size" />
-
     </RelativeLayout>
 
     <!-- TODO inserir icone da lupa -->

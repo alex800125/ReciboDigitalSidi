@@ -16,6 +16,10 @@
     <string name="header_screen_title">Nome padrão</string>
     <string name="header_create_new_account">Criar nova conta</string>
     <string name="header_back_button">Botão voltar</string>
+    <string name="header_avatar">Imagem do avatar</string>
+    <string name="header_screen_all_receipts">Todos os recibos</string>
+    <string name="header_receipt_name">Detalhes do Recibo</string>
+    <string name="header_receipt_share">Compartilhar o recibo</string>
 
     <!-- Create User -->
     <string name="create_user_name">Nome</string>
@@ -38,7 +42,7 @@
     <string name="home_screen_add_button">Botão Adicionar categoria</string>
     <string name="home_screen_default_category">Categoria padrão</string>
     <string name="home_screen_all_receipts">Todos os recibos</string>
-    <string name="home_screen_favorite_receipts">Recibos favoritos</string>
+    <string name="home_screen_favorite_receipts">Favoritos</string>
     <string name="home_screen_zero_receipt">0 recibo</string>
     <string name="home_screen_receipt">%s recibo</string>
     <string name="home_screen_receipts">%s recibos</string>
@@ -49,10 +53,24 @@
     <string name="code_message_incorrect_email_or_password">Senha ou e-mail incorretos.</string>
 
     <!-- All Receipts -->
-    <string name="header_screen_all_receipts">Todos os recibos</string>
     <string name="all_receipts_search">Procure um recibo…</string>
-    <string name="all_receipts_merchant_image">Image mercado</string>
+    <string name="all_receipts_merchant_icon">Icone mercado</string>
     <string name="all_receipts_default_merchant_name">Nome mercado</string>
     <string name="all_receipts_default_value">R$10,00</string>
     <string name="all_receipts_default_date">01/01/2000</string>
+
+    <!-- Receipt details -->
+    <string name="receipt_details_merchant_image">Imagem mercado</string>
+    <string name="receipt_details_default_merchant_name">Mercado padrão</string>
+    <string name="receipt_details_default_value">R$ 0,00</string>
+    <string name="receipt_details_value">R$ %s</string>
+    <string name="receipt_details_default_date">01/01/2000 01:00</string>
+    <string name="receipt_details_default_payment">Cartão de crédito: Visa 9999</string>
+    <string name="receipt_details_payment">%s: %s</string>
+    <string name="receipt_details_payment_credit_card">Cartão de crédito</string>
+    <string name="receipt_details_payment_debit_card">Cartão de débito</string>
+    <string name="receipt_details_default_authentication_code">Código de autenticação: xxxx-xxxx-xxxx</string>
+    <string name="receipt_details_authentication_code">Código de autenticação: %s</string>
+    <string name="receipt_details_favorite">Favorito</string>
+    <string name="receipt_details_add_category">Adicionar categoria</string>
 </resources>

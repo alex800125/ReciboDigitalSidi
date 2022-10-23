@@ -14,4 +14,5 @@
 
     <!-- Home Screen -->
     <color name="default_card_view_background">#FAFAFA</color>
+    <color name="category_card_view_background">#D0BFE8</color>
 </resources>

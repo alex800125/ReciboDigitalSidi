@@ -17,14 +17,13 @@
             android:layout_width="@dimen/header_width"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:contentDescription="@string/header_back_button"
-            android:onClick="backButton"
-            android:padding="@dimen/header_padding"
-            android:src="@drawable/icon_back_button" />
+            android:contentDescription="@string/header_avatar"
+            android:padding="@dimen/header_avatar_padding"
+            android:src="@drawable/icon_avatar" />
 
         <TextView
             android:id="@+id/header_user_name"
-            style="@style/cardViewText"
+            style="@style/DefaultText"
             android:layout_centerInParent="true"
             android:text="@string/header_screen_title"
             android:textAlignment="center"
@@ -41,14 +40,12 @@
             android:src="@drawable/icon_qr_code" />
     </RelativeLayout>
 
-    <ImageView
+    <include
         android:id="@+id/all_receipts"
+        layout="@layout/category_card_view"
         android:layout_width="@dimen/empty_size"
         android:layout_height="@dimen/home_screen_card_view_height"
-        android:layout_marginHorizontal="@dimen/home_screen_card_view_margin"
-        android:background="@color/login_screen_button_background_tint"
-        android:contentDescription="@string/home_screen_all_receipts"
-        android:onClick="getAllReceipts"
+        android:layout_margin="@dimen/all_screen_edit_text_search_margin"
         app:layout_constraintEnd_toStartOf="@id/middle_guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_header" />
@@ -60,13 +57,12 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
 
-    <ImageView
+    <include
         android:id="@+id/favorite_receipts"
+        layout="@layout/category_card_view"
         android:layout_width="@dimen/empty_size"
         android:layout_height="@dimen/home_screen_card_view_height"
-        android:layout_marginHorizontal="@dimen/home_screen_card_view_margin"
-        android:background="@color/login_screen_message_wrong_user_text"
-        android:contentDescription="@string/home_screen_favorite_receipts"
+        android:layout_margin="@dimen/all_screen_edit_text_search_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/middle_guideline"
         app:layout_constraintTop_toBottomOf="@id/home_header" />

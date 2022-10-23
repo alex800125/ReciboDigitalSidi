@@ -2,6 +2,7 @@ package com.example.recibodigitalalexventurini.screens
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -45,10 +46,11 @@ class CreateUserActivity : AppCompatActivity() {
                 )
             }
 
-        findViewById<ImageView>(R.id.create_user_back_button)
-            .setOnClickListener {
-                onBackPressed()
-            }
+    }
+
+    fun backButton(view: View) {
+        Log.i(TAG, "getAllReceipts()")
+        onBackPressed()
     }
 
     private fun init() {
