@@ -26,18 +26,30 @@
             android:textSize="@dimen/header_name_text_size" />
     </RelativeLayout>
 
-    <!-- TODO inserir icone da lupa -->
-    <EditText
-        android:id="@+id/search"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/all_receipts_search"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/all_screen_edit_text_search_height"
-        android:layout_margin="@dimen/all_screen_edit_text_search_margin"
-        android:autofillHints="name"
+        android:layout_height="wrap_content"
         android:hint="@string/all_receipts_search"
+        app:iconifiedByDefault="false"
         app:layout_constraintBottom_toTopOf="@id/all_receipts_recyclerview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/all_receipts_header" />
+        app:layout_constraintTop_toBottomOf="@id/all_receipts_header"
+        app:queryBackground="@null" />
+
+    <TextView
+        android:id="@+id/all_receipts_no_item"
+        style="@style/subText"
+        android:layout_centerInParent="true"
+        android:text="@string/all_receipts_no_item"
+        android:textAlignment="center"
+        android:textSize="@dimen/all_receipt_search_no_item"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/all_receipts_recyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/all_receipts_search" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/all_receipts_recyclerview"
@@ -45,7 +57,7 @@
         android:layout_height="@dimen/empty_size"
         android:layout_marginTop="@dimen/empty_size"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search"
+        app:layout_constraintTop_toBottomOf="@id/all_receipts_search"
         tools:listitem="@layout/receipt_card_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

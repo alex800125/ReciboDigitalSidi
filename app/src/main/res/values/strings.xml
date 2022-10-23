@@ -58,6 +58,7 @@
     <string name="all_receipts_default_merchant_name">Merchant name</string>
     <string name="all_receipts_default_value">$10</string>
     <string name="all_receipts_default_date">01/01/2000</string>
+    <string name="all_receipts_no_item">No items match a search</string>
 
     <!-- Receipt details -->
     <string name="receipt_details_merchant_image">Merchant image</string>

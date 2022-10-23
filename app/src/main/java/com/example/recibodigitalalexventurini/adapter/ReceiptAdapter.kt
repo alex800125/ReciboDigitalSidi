@@ -6,6 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -16,10 +18,19 @@ import com.example.recibodigitalalexventurini.utils.ConstantsUtils
 import com.example.recibodigitalalexventurini.utils.Utils
 import kotlinx.coroutines.*
 import java.net.URL
+import java.util.*
 
-class ReceiptAdapter(private val mList: List<ReceiptResponse>, private val mActivity: Activity) :
-    RecyclerView.Adapter<ReceiptAdapter.ViewHolder>() {
+class ReceiptAdapter(
+    private val mList: List<ReceiptResponse>,
+    private val mActivity: Activity
+) :
+    RecyclerView.Adapter<ReceiptAdapter.ViewHolder>(), Filterable {
     private val TAG = ConstantsUtils.LOGTAG + "ReceiptAdapter"
+    var receiptsFilterList: List<ReceiptResponse>
+
+    init {
+        receiptsFilterList = mList
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -29,8 +40,7 @@ class ReceiptAdapter(private val mList: List<ReceiptResponse>, private val mActi
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.i(TAG, "onBindViewHolder()")
-        val receiptResponse = mList[position]
+        val receiptResponse = receiptsFilterList[position]
 
         CoroutineScope(Dispatchers.IO).launch {
             val merchantIcon = Utils.getImageFromUrl(URL(receiptResponse.merchantIcon))
@@ -47,7 +57,38 @@ class ReceiptAdapter(private val mList: List<ReceiptResponse>, private val mActi
     }
 
     override fun getItemCount(): Int {
-        return mList.size
+        return receiptsFilterList.size
+    }
+
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charSearch = constraint.toString()
+                if (charSearch.isEmpty()) {
+                    receiptsFilterList = mList
+                } else {
+                    val resultList = ArrayList<ReceiptResponse>()
+                    for (row in mList) {
+                        if (row.merchantName.lowercase(Locale.ROOT)
+                                .contains(charSearch.lowercase(Locale.ROOT))
+                        ) {
+                            resultList.add(row)
+                        }
+                    }
+                    receiptsFilterList = resultList
+                }
+                val filterResults = FilterResults()
+                filterResults.values = receiptsFilterList
+                return filterResults
+            }
+
+            @Suppress("UNCHECKED_CAST")
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                receiptsFilterList = results?.values as List<ReceiptResponse>
+                notifyDataSetChanged()
+            }
+
+        }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
