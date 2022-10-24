@@ -1,6 +1,7 @@
 package com.example.recibodigitalalexventurini.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 // Example Category:
 // "categories": [...]
@@ -12,7 +13,7 @@ data class ListCategoriesResponse(
     var resultMessage: String,
     @SerializedName("categories")
     var categories: List<CategoryResponse>
-)
+) : Serializable
 
 // Example category:
 //    "id": "631148c834626f6711c1304b",
@@ -29,4 +30,18 @@ data class CategoryResponse(
     var color: String,
     @SerializedName("countReceipts")
     var countReceipts: Int
+) : Serializable
+
+data class NewCategoryResponse(
+    @SerializedName("code")
+    var code: String,
+    @SerializedName("resultMessage")
+    var resultMessage: String
+)
+
+data class AddCategoryForReceiptResponse(
+    @SerializedName("code")
+    var code: String,
+    @SerializedName("resultMessage")
+    var resultMessage: String
 )

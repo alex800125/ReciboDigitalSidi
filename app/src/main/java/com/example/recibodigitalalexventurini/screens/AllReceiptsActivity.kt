@@ -29,7 +29,7 @@ class AllReceiptsActivity : AppCompatActivity() {
     }
 
     fun backButton(view: View) {
-        Log.i(TAG, "getAllReceipts()")
+        Log.i(TAG, "backButton()")
         onBackPressed()
     }
 

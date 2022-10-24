@@ -48,6 +48,12 @@
     <string name="home_screen_receipts">%s recibos</string>
     <string name="home_screen_welcome">Olá, %s</string>
 
+    <!-- Create Category -->
+    <string name="home_screen_create_category_title">Criar categoria</string>
+    <string name="home_screen_create_category_message">Entre com o nome da nova categoria:</string>
+    <string name="home_screen_create_category_positive_button">Criar</string>
+    <string name="home_screen_create_category_negative_button">Cancelar</string>
+
     <!-- Code Message -->
     <string name="code_message_access_api_error">Erro ao acessar a API.</string>
     <string name="code_message_incorrect_email_or_password">Senha ou e-mail incorretos.</string>
@@ -74,4 +80,5 @@
     <string name="receipt_details_authentication_code">Código de autenticação: %s</string>
     <string name="receipt_details_favorite">Favorito</string>
     <string name="receipt_details_add_category">Adicionar categoria</string>
+    <string name="add_or_remove_category_icon_description">Icone de diretório</string>
 </resources>

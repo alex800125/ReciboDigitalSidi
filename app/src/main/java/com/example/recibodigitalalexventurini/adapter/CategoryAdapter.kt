@@ -1,5 +1,7 @@
 package com.example.recibodigitalalexventurini.adapter
 
+import android.content.Context
+import android.content.res.Resources
 import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
@@ -28,14 +30,24 @@ class CategoryAdapter(private val mList: List<CategoryResponse>) :
 
         holder.categoryBackground.setBackgroundColor(Color.parseColor(categoryResponse.color))
         holder.categoryName.text = categoryResponse.category
-        holder.categoryReceiptCount.text = categoryResponse.countReceipts.toString()
 
-        // TODO update this with receipt string
-//        if (categoryResponse.countReceipts == 0) {
-//            String.format(getString(R.string.home_screen_receipt), categoryResponse.countReceipts)
-//        } else {
-//            String.format(getString(R.string.home_screen_receipts), categoryResponse.countReceipts)
-//        }
+        // TODO tentar resolver esse problema no futuro
+        // Improvise because we couldn't access Resources String:
+        // Resources.getSystem().getString(R.string.home_screen_receipts)
+        val receipt = "%s receipt"
+        val receipts = "%s receipts"
+
+        holder.categoryReceiptCount.text = if (categoryResponse.countReceipts == 0) {
+            String.format(
+                receipts,
+                categoryResponse.countReceipts.toString()
+            )
+        } else {
+            String.format(
+                receipt,
+                Integer.toString(categoryResponse.countReceipts)
+            )
+        }
 
         holder.bind(mList[position])
     }

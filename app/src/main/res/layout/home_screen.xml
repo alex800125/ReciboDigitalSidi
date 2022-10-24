@@ -90,6 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/empty_size"
         android:contentDescription="@string/home_screen_add_button"
+        android:onClick="executeCreateCategory"
         android:padding="@dimen/home_screen_add_button_padding"
         android:src="@drawable/icon_add"
         app:layout_constraintBottom_toBottomOf="parent"

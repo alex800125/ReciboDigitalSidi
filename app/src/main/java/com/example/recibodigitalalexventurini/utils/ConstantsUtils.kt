@@ -4,15 +4,9 @@ class ConstantsUtils {
     companion object {
         const val LOGTAG = "ReciptDigital:"
 
-        fun teste(){
-
-        }
-
         const val USER_EXTRA = "extra_user"
         const val RECEIPTS_EXTRA = "extra_receipts"
         const val RECEIPT_DETAILS_EXTRA = "extra_details_receipt"
-
-        const val EMPTY_STRING = ""
 
         // API Default items
         const val API_PATH = "https://sidi-proj-capacitacao.herokuapp.com"
@@ -33,5 +27,8 @@ class ConstantsUtils {
 
         /** CATEGORY - GET and POST methods in the API. Get and create new category. */
         const val URL_CATEGORY = "$API_PATH$API_VERSION/category"
+
+        /** CATEGORY for RECEIPT - PUT method in the API. PUT a category for a exist receipt. */
+        const val CATEGORY_RECEIPT = "$API_PATH$API_VERSION/categoryreceipt/{receiptId}"
     }
 }

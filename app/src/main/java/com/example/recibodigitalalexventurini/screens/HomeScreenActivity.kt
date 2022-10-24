@@ -1,18 +1,18 @@
 package com.example.recibodigitalalexventurini.screens
 
 import android.content.Intent
-import com.example.recibodigitalalexventurini.adapter.CategoryAdapter
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
+import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recibodigitalalexventurini.R
+import com.example.recibodigitalalexventurini.adapter.CategoryAdapter
 import com.example.recibodigitalalexventurini.api.RetrofitClient
 import com.example.recibodigitalalexventurini.model.*
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils
@@ -26,10 +26,12 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.net.URL
 
+
 class HomeScreenActivity : AppCompatActivity() {
     private val TAG = ConstantsUtils.LOGTAG + "HomeScreenActivity"
 
     lateinit var mListReceipts: ListReceiptsResponse
+    lateinit var mListCategories: ListCategoriesResponse
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,16 +62,13 @@ class HomeScreenActivity : AppCompatActivity() {
             .setBackgroundColor(resources.getColor(R.color.category_card_view_background))
         allFavoriteReceiptsButton.findViewById<TextView>(R.id.category_name).text =
             resources.getString(R.string.home_screen_favorite_receipts)
+
         // TODO atualizar favorite item
         allFavoriteReceiptsButton.findViewById<TextView>(R.id.category_receipt_count).text =
             String.format(getString(R.string.home_screen_receipts), mListReceipts.receipts.size)
 
         allFavoriteReceiptsButton.setOnClickListener {
             Log.i(TAG, "allFavoriteReceiptsButton.onClick()")
-
-            val allReceiptsScreen = Intent(this, AllReceiptsActivity::class.java)
-            allReceiptsScreen.putExtra(ConstantsUtils.RECEIPTS_EXTRA, mListReceipts)
-            this.startActivity(allReceiptsScreen)
         }
 
         allReceiptsButton.setOnClickListener {
@@ -117,26 +116,26 @@ class HomeScreenActivity : AppCompatActivity() {
                             "getCategoriesList() onResponse() code: " + response.body()?.code +
                                     " resultMessage: " + response.body()?.resultMessage
                         )
-                        updateCategories(response.body()?.categories)
+                        mListCategories = response.body()!!
+                        updateCategories()
                     }
                 }
 
                 override fun onFailure(call: Call<ListCategoriesResponse>, t: Throwable) {
-                    Log.e(TAG, "Failed to take categories t:'${t.message}' call:$call")
+                    Log.e(
+                        TAG,
+                        "getCategoriesList() Failed to take categories t:'${t.message}' call:$call"
+                    )
                 }
             })
     }
 
-    private fun updateCategories(categoriesList: List<CategoryResponse>?) {
+    private fun updateCategories() {
         Log.i(TAG, "updateCategories()")
-        if (categoriesList != null) {
-            val recyclerview = findViewById<RecyclerView>(R.id.category_recyclerview)
-            val adapter = CategoryAdapter(categoriesList)
-            recyclerview.layoutManager = LinearLayoutManager(this)
-            recyclerview.adapter = adapter
-        } else {
-            Log.i(TAG, "updateCategories() categoriesList is null!")
-        }
+        val recyclerview = findViewById<RecyclerView>(R.id.category_recyclerview)
+        val adapter = CategoryAdapter(mListCategories.categories)
+        recyclerview.layoutManager = LinearLayoutManager(this)
+        recyclerview.adapter = adapter
     }
 
     private fun getReceiptList() {
@@ -160,8 +159,62 @@ class HomeScreenActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ListReceiptsResponse>, t: Throwable) {
-                    Log.e(TAG, "Failed to take receipts t:'${t.message}' call:$call")
+                    Log.e(
+                        TAG,
+                        "getReceiptList() Failed to take receipts t:'${t.message}' call:$call"
+                    )
                 }
             })
+    }
+
+    fun executeCreateCategory(view: View) {
+        Log.i(TAG, "executeCreateCategory()")
+
+        val categoryAlertDialog: AlertDialog.Builder = AlertDialog.Builder(this)
+        val categoryEdittext = EditText(this)
+        categoryAlertDialog.setTitle(getString(R.string.home_screen_create_category_title))
+        categoryAlertDialog.setMessage(getString(R.string.home_screen_create_category_message))
+        categoryAlertDialog.setView(categoryEdittext)
+
+        categoryAlertDialog.setPositiveButton(getString(R.string.home_screen_create_category_positive_button))
+        { dialog, whichButton ->
+            Log.i(TAG, "executeCreateCategory() create edittext: " + categoryEdittext.text)
+            postNewCategory(categoryEdittext.text.toString())
+        }
+
+        categoryAlertDialog.setNegativeButton(
+            getString(R.string.home_screen_create_category_negative_button)
+        ) { dialog, whichButton ->
+            Log.i(TAG, "executeCreateCategory() cancel")
+        }
+
+        categoryAlertDialog.show()
+    }
+
+    private fun postNewCategory(categoryName: String) {
+        Log.i(TAG, "postNewCategory() categoryName: $categoryName")
+        RetrofitClient.instance.postNewCategory(categoryName)
+            .enqueue(object : Callback<NewCategoryResponse> {
+
+                override fun onResponse(
+                    call: Call<NewCategoryResponse>,
+                    response: Response<NewCategoryResponse>
+                ) {
+                    showPostNewCategoryResponse(response.code().toString(), response.message())
+                }
+
+                override fun onFailure(call: Call<NewCategoryResponse>, t: Throwable) {
+                    Log.e(
+                        TAG,
+                        "postNewCategory() Failed to take receipts t:'${t.message}' call:$call"
+                    )
+                }
+            })
+    }
+
+    private fun showPostNewCategoryResponse(code: String, message: String) {
+        Log.i(TAG, "showPostNewCategoryResponse() code: $code, message: $message")
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        getCategoriesList()
     }
 }
