@@ -80,5 +80,9 @@
     <string name="receipt_details_authentication_code">Código de autenticação: %s</string>
     <string name="receipt_details_favorite">Favorito</string>
     <string name="receipt_details_add_category">Adicionar categoria</string>
+
+    <!-- Add or Remove category -->
     <string name="add_or_remove_category_icon_description">Icone de diretório</string>
+    <string name="add_or_remove_category_title">Adicionar ou remover uma categoria!</string>
+    <string name="add_or_remove_category_description">Selecione a categoria desejada:</string>
 </resources>

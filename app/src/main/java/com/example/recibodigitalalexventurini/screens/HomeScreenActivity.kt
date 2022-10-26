@@ -43,8 +43,13 @@ class HomeScreenActivity : AppCompatActivity() {
         updateUser(user.name, user.avatar)
 
         RetrofitClient.setAuth(user.token)
-        getCategoriesList()
         getReceiptList()
+    }
+
+    override fun onResume() {
+        Log.i(TAG, "onResume")
+        super.onResume()
+        getCategoriesList()
     }
 
     private fun updateMainCategoryButton() {

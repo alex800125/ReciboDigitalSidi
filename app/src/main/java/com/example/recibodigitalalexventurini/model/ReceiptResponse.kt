@@ -56,5 +56,5 @@ data class ReceiptResponse(
     @SerializedName("message")
     var message: String,
     @SerializedName("categories")
-    var categories: List<String>
+    var categories: MutableList<String>
 ) : Serializable

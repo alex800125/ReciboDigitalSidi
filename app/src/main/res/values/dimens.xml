@@ -91,6 +91,6 @@
     <dimen name="add_or_remove_category_card_view_height">60dp</dimen>
     <dimen name="add_or_remove_category_icon_size">40dp</dimen>
     <dimen name="add_or_remove_category_icon_margin_start">10dp</dimen>
-    <dimen name="add_or_remove_category_category_name_margin_end">30dp</dimen>
+    <dimen name="add_or_remove_category_category_name_margin_start">60dp</dimen>
     <dimen name="add_or_remove_category_category_switch_margin_end">10dp</dimen>
 </resources>

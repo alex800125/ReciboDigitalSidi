@@ -80,5 +80,9 @@
     <string name="receipt_details_authentication_code">Authentication Code: \n %s</string>
     <string name="receipt_details_favorite">Favorite</string>
     <string name="receipt_details_add_category">Add category</string>
+
+    <!-- Add or Remove category -->
     <string name="add_or_remove_category_icon_description">Folder icon</string>
+    <string name="add_or_remove_category_title">Add or Remove a Category!</string>
+    <string name="add_or_remove_category_description">Select the desired category:</string>
 </resources>
