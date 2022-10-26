@@ -69,11 +69,12 @@
     <!-- Receipt details -->
     <string name="receipt_details_merchant_image">Merchant image</string>
     <string name="receipt_details_default_merchant_name">Default Merchant</string>
+    <string name="receipt_details_merchant_name">Merchant Name: %s</string>
     <string name="receipt_details_default_value">$ 0,00</string>
-    <string name="receipt_details_value">$ %s</string>
+    <string name="receipt_details_value">Value: $ %s</string>
     <string name="receipt_details_default_date">01/01/2000 01:00 AM</string>
     <string name="receipt_details_default_payment">Credit card: Visa 9999</string>
-    <string name="receipt_details_payment">%s: %s</string>
+    <string name="receipt_details_payment">Payment: %s, %s</string>
     <string name="receipt_details_payment_credit_card">Credit Card</string>
     <string name="receipt_details_payment_debit_card">Debit Card</string>
     <string name="receipt_details_default_authentication_code">Authentication Code: xxxx-xxxx-xxxx</string>

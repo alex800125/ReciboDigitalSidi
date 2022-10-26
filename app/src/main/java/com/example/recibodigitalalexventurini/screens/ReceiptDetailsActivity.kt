@@ -1,5 +1,6 @@
 package com.example.recibodigitalalexventurini.screens
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -44,6 +45,43 @@ class ReceiptDetailsActivity : AppCompatActivity() {
     fun backButton(view: View) {
         Log.i(TAG, "backButton()")
         onBackPressed()
+    }
+
+    fun shareReceipt(view: View) {
+        Log.i(TAG, "shareReceipt()")
+
+        val textToSend =
+            String.format(
+                getString(R.string.receipt_details_merchant_name),
+                mReceipt.merchantName
+            ) +
+                    "\n" + String.format(
+                getString(R.string.receipt_details_value),
+                mReceipt.value
+            ) +
+                    "\nDate: " + mReceipt.date +
+                    "\n" + String.format(
+                getString(R.string.receipt_details_payment),
+                (
+                        if (mReceipt.paymentMethod == "1")
+                            getString(R.string.receipt_details_payment_credit_card)
+                        else
+                            getString(R.string.receipt_details_payment_debit_card)
+                        ), mReceipt.cardInfoBrand
+            ) +
+                    " \n" + String.format(
+                getString(R.string.receipt_details_authentication_code),
+                mReceipt.authentication
+            )
+
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, textToSend)
+            type = "text/plain"
+        }
+
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
     }
 
     fun executeFavorite(view: View) {

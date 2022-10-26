@@ -69,11 +69,12 @@
     <!-- Receipt details -->
     <string name="receipt_details_merchant_image">Imagem mercado</string>
     <string name="receipt_details_default_merchant_name">Mercado padrão</string>
+    <string name="receipt_details_merchant_name">Nome do Mercado: %s</string>
     <string name="receipt_details_default_value">R$ 0,00</string>
-    <string name="receipt_details_value">R$ %s</string>
+    <string name="receipt_details_value">Valor: R$ %s</string>
     <string name="receipt_details_default_date">01/01/2000 01:00</string>
     <string name="receipt_details_default_payment">Cartão de crédito: Visa 9999</string>
-    <string name="receipt_details_payment">%s: %s</string>
+    <string name="receipt_details_payment">Pagamento: %s, %s</string>
     <string name="receipt_details_payment_credit_card">Cartão de crédito</string>
     <string name="receipt_details_payment_debit_card">Cartão de débito</string>
     <string name="receipt_details_default_authentication_code">Código de autenticação: xxxx-xxxx-xxxx</string>

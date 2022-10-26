@@ -32,6 +32,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:contentDescription="@string/header_receipt_share"
+            android:onClick="shareReceipt"
             android:padding="@dimen/header_share_padding"
             android:src="@drawable/icon_share" />
     </RelativeLayout>
