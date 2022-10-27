@@ -37,6 +37,14 @@
     <string name="create_user_terms_service">I agree with the Terms of Service and Privacy Policy information.</string>
     <string name="create_user_register">Register!</string>
 
+    <!-- Create User - Error Message -->
+    <string name="create_user_name_error">Name is empty</string>
+    <string name="create_user_phone_number_error">Phone number is empty</string>
+    <string name="create_user_email_error">Email is not valid</string>
+    <string name="create_user_cpf_error">CPF is not valid</string>
+    <string name="create_user_password_error">Password doesn\'t match or is empty</string>
+    <string name="create_user_terms_error">You have to accept the terms</string>
+
     <!-- Home Screen -->
     <string name="home_screen_qrcode">QR Code button</string>
     <string name="home_screen_add_button">Add category button</string>

@@ -37,6 +37,14 @@
     <string name="create_user_terms_service">Concordo com as informações dos Termos de Serviço e da Política de Privacidade.</string>
     <string name="create_user_register">Criar!</string>
 
+    <!-- Create User - Error Message -->
+    <string name="create_user_name_error">Nome está vazio</string>
+    <string name="create_user_phone_number_error">Número de telefone está vazio</string>
+    <string name="create_user_email_error">E-mail não válido</string>
+    <string name="create_user_cpf_error">CPF não válido</string>
+    <string name="create_user_password_error">A senha não corresponde ou está vazia</string>
+    <string name="create_user_terms_error">Você tem que aceitar os termos</string>
+
     <!-- Home Screen -->
     <string name="home_screen_qrcode">Botão QR Code</string>
     <string name="home_screen_add_button">Botão Adicionar categoria</string>

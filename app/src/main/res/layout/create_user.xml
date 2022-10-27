@@ -50,6 +50,14 @@
         app:layout_constraintTop_toBottomOf="@id/create_user_name_text" />
 
     <TextView
+        android:id="@+id/create_user_name_text_error"
+        style="@style/createUserErrorText"
+        android:text="@string/create_user_name_error"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_name_edittext" />
+
+    <TextView
         android:id="@+id/create_user_phone_number_text"
         style="@style/createUserText"
         android:text="@string/create_user_phone_number"
@@ -66,6 +74,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_user_phone_number_text" />
+
+    <TextView
+        android:id="@+id/create_user_phone_number_text_error"
+        style="@style/createUserErrorText"
+        android:text="@string/create_user_name_error"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_phone_number_edittext" />
 
     <TextView
         android:id="@+id/create_user_email_text"
@@ -86,6 +102,14 @@
         app:layout_constraintTop_toBottomOf="@id/create_user_email_text" />
 
     <TextView
+        android:id="@+id/create_user_email_text_error"
+        style="@style/createUserErrorText"
+        android:text="@string/create_user_email_error"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_email_edittext" />
+
+    <TextView
         android:id="@+id/create_user_cpf_text"
         style="@style/createUserText"
         android:text="@string/create_user_cpf"
@@ -102,6 +126,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_user_cpf_text" />
+
+    <TextView
+        android:id="@+id/create_user_cpf_text_error"
+        style="@style/createUserErrorText"
+        android:text="@string/create_user_cpf_error"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_cpf_edittext" />
 
     <TextView
         android:id="@+id/create_user_password_text"
@@ -122,6 +154,14 @@
         app:layout_constraintTop_toBottomOf="@id/create_user_password_text" />
 
     <TextView
+        android:id="@+id/create_user_password_text_error"
+        style="@style/createUserErrorText"
+        android:text="@string/create_user_password_error"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_password_edittext" />
+
+    <TextView
         android:id="@+id/create_user_confirm_password_text"
         style="@style/createUserText"
         android:text="@string/create_user_confirm_password"
@@ -140,6 +180,14 @@
         app:layout_constraintTop_toBottomOf="@id/create_user_confirm_password_text" />
 
     <TextView
+        android:id="@+id/create_user_confirm_password_text_error"
+        style="@style/createUserErrorText"
+        android:text="@string/create_user_password_error"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_confirm_password_edittext" />
+
+    <TextView
         android:id="@+id/create_user_terms_service_text"
         style="@style/createUserTermsServiceText"
         android:text="@string/create_user_terms_service"
@@ -151,11 +199,19 @@
         android:id="@+id/create_user_terms_service_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="@dimen/create_user_switch_button_margin_end"
         app:layout_constraintBottom_toBottomOf="@id/create_user_terms_service_text"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/create_user_terms_service_text"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/create_user_switch_text_error"
+        style="@style/createUserErrorText"
+        android:text="@string/create_user_terms_error"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_user_terms_service_text" />
 
     <Button
         android:id="@+id/create_user_register"
@@ -164,7 +220,6 @@
         android:text="@string/create_user_register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/create_user_terms_service_text" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

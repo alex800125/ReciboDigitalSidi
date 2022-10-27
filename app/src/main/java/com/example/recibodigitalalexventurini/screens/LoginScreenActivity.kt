@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.recibodigitalalexventurini.R
@@ -41,10 +42,12 @@ class LoginScreenActivity : AppCompatActivity() {
     private fun executeLogin() {
         Log.i(TAG, "executeLogin()")
 
-        // TODO Validate this items in the future
-        val email = "alex3@email.com"
-        val password = "123"
+        //val email = "alex3@email.com"
+        //val password = "123"
+        val email = findViewById<EditText>(R.id.user_email).text.toString()
+        val password = findViewById<EditText>(R.id.user_password).text.toString()
 
+        Log.i(TAG, "executeLogin() email: $email password: $password")
         RetrofitClient.instance.userLogin(email, password)
             .enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(
@@ -94,6 +97,7 @@ class LoginScreenActivity : AppCompatActivity() {
 
     fun updateLoginSuccess(loginResponse: LoginResponse) {
         Log.i(TAG, "updateLoginSuccess()")
+        updateLoginMessageError(false, ConstantsUtils.EMPTY_STRING)
 
         val homeScreen = Intent(this, HomeScreenActivity::class.java)
         homeScreen.putExtra(ConstantsUtils.USER_EXTRA, loginResponse)

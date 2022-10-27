@@ -54,8 +54,12 @@
     <dimen name="create_user_margin_horizontal_text">10dp</dimen>
     <dimen name="create_user_margin_horizontal_edittext">20dp</dimen>
     <dimen name="create_user_terms_service_margin_start">20dp</dimen>
+    <dimen name="create_user_terms_service_margin_top">20dp</dimen>
     <dimen name="create_user_terms_service_margin_end">70dp</dimen>
+    <dimen name="create_user_switch_button_margin_end">20dp</dimen>
     <dimen name="create_user_edittext_height">40dp</dimen>
+    <dimen name="create_user_error_text_height">15dp</dimen>
+    <dimen name="create_user_error_text_size">10sp</dimen>
 
     <!--  Card view  -->
     <dimen name="card_view_height">100dp</dimen>

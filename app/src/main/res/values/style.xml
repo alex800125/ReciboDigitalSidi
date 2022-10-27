@@ -39,7 +39,7 @@
     <style name="loginScreenWrongUserText" parent="ThemeOverlay.AppCompat">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:textColor">@color/login_screen_message_wrong_user_text</item>
+        <item name="android:textColor">@color/wrong_message_text</item>
         <item name="android:textSize">@dimen/login_screen_message_wrong_user_text_size</item>
         <item name="android:layout_marginBottom">@dimen/login_screen_margin_bottom</item>
     </style>
@@ -91,9 +91,20 @@
         <item name="android:layout_marginHorizontal">@dimen/create_user_margin_horizontal_edittext</item>
     </style>
 
+    <style name="createUserErrorText" parent="ThemeOverlay.AppCompat">
+        <item name="android:layout_height">@dimen/create_user_error_text_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginHorizontal">@dimen/create_user_margin_horizontal_edittext</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/wrong_message_text</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:textSize">@dimen/create_user_error_text_size</item>
+    </style>
+
     <style name="createUserTermsServiceText" parent="createUserText">
         <item name="android:textAlignment">textStart</item>
         <item name="android:layout_marginStart">@dimen/create_user_terms_service_margin_start</item>
+        <item name="android:layout_marginTop">@dimen/create_user_terms_service_margin_top</item>
         <item name="android:layout_marginEnd">@dimen/create_user_terms_service_margin_end</item>
     </style>
 
