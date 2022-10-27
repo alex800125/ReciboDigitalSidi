@@ -1,5 +1,7 @@
 package com.example.recibodigitalalexventurini.adapter
 
+import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,10 +10,19 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recibodigitalalexventurini.R
+import com.example.recibodigitalalexventurini.api.RetrofitClient
 import com.example.recibodigitalalexventurini.model.CategoryResponse
+import com.example.recibodigitalalexventurini.model.ListReceiptsResponse
+import com.example.recibodigitalalexventurini.screens.AllReceiptsActivity
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class CategoryAdapter(private val mList: List<CategoryResponse>) :
+class CategoryAdapter(
+    private val mList: List<CategoryResponse>,
+    private val mActivity: Activity
+) :
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
     private val TAG = ConstantsUtils.LOGTAG + "CategoryAdapter"
 
@@ -42,11 +53,11 @@ class CategoryAdapter(private val mList: List<CategoryResponse>) :
         } else {
             String.format(
                 receipt,
-                Integer.toString(categoryResponse.countReceipts)
+                categoryResponse.countReceipts.toString()
             )
         }
 
-        holder.bind(mList[position])
+        holder.bind(mList[position], mActivity)
     }
 
     override fun getItemCount(): Int {
@@ -60,10 +71,55 @@ class CategoryAdapter(private val mList: List<CategoryResponse>) :
         val categoryName: TextView = this.itemView.findViewById(R.id.category_name)
         val categoryReceiptCount: TextView = this.itemView.findViewById(R.id.category_receipt_count)
 
-        fun bind(item: CategoryResponse) {
+        fun bind(
+            item: CategoryResponse,
+            mActivity: Activity
+        ) {
             itemView.setOnClickListener {
-                Log.i(TAG, "setOnClickListener id: ${item.id}")
+                Log.i(TAG, "setOnClickListener() id: ${item.id}")
+                getReceiptList(item.id, mActivity)
             }
+        }
+
+        private fun selectReceiptAvailable(
+            id: String,
+            listReceipt: ListReceiptsResponse,
+            activity: Activity
+        ) {
+            Log.i(TAG, "selectReceiptAvailable()")
+            listReceipt.receipts.removeIf { !it.categories.contains(id) }
+
+            val allReceiptsScreen = Intent(activity, AllReceiptsActivity::class.java)
+            allReceiptsScreen.putExtra(ConstantsUtils.RECEIPTS_EXTRA, listReceipt)
+            activity.startActivity(allReceiptsScreen)
+        }
+
+        private fun getReceiptList(id: String, activity: Activity) {
+            Log.i(TAG, "getReceiptList()")
+            RetrofitClient.instance.getReceipts()
+                .enqueue(object : Callback<ListReceiptsResponse> {
+
+                    override fun onResponse(
+                        call: Call<ListReceiptsResponse>,
+                        response: Response<ListReceiptsResponse>
+                    ) {
+                        if (response.isSuccessful) {
+                            Log.i(
+                                TAG,
+                                "getReceiptList() onResponse() code: " + response.body()?.code +
+                                        " resultMessage: " + response.body()?.resultMessage
+                            )
+                            selectReceiptAvailable(id, response.body()!!, activity)
+                        }
+                    }
+
+                    override fun onFailure(call: Call<ListReceiptsResponse>, t: Throwable) {
+                        Log.e(
+                            TAG,
+                            "getReceiptList() Failed to take receipts t:'${t.message}' call:$call"
+                        )
+                    }
+                })
         }
     }
 }

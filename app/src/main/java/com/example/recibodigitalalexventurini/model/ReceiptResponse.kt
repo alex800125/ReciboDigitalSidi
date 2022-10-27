@@ -12,7 +12,7 @@ data class ListReceiptsResponse(
     @SerializedName("resultMessage")
     var resultMessage: String,
     @SerializedName("receipts")
-    var receipts: List<ReceiptResponse>
+    var receipts: MutableList<ReceiptResponse>
 ) : Serializable
 
 // Example Receipt:

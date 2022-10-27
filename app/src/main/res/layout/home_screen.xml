@@ -36,6 +36,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:contentDescription="@string/home_screen_qrcode"
+            android:onClick="qrCodeButton"
             android:padding="@dimen/home_screen_card_view_margin"
             android:src="@drawable/icon_qr_code" />
     </RelativeLayout>

@@ -90,6 +90,11 @@ class HomeScreenActivity : AppCompatActivity() {
         onBackPressed()
     }
 
+    fun qrCodeButton(view: View) {
+        // TODO implememnt
+        Log.i(TAG, "qrCodeButton()")
+    }
+
     private fun updateUser(name: String, urlAvatar: String) {
         Log.i(TAG, "updateUser()")
 
@@ -138,7 +143,7 @@ class HomeScreenActivity : AppCompatActivity() {
     private fun updateCategories() {
         Log.i(TAG, "updateCategories()")
         val recyclerview = findViewById<RecyclerView>(R.id.category_recyclerview)
-        val adapter = CategoryAdapter(mListCategories.categories)
+        val adapter = CategoryAdapter(mListCategories.categories, this)
         recyclerview.layoutManager = LinearLayoutManager(this)
         recyclerview.adapter = adapter
     }
