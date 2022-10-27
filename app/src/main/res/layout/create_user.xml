@@ -31,6 +31,7 @@
             style="@style/headerEmpty" />
     </RelativeLayout>
 
+    <!-- Name -->
     <TextView
         android:id="@+id/create_user_name_text"
         style="@style/createUserText"
@@ -57,6 +58,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_user_name_edittext" />
 
+    <!-- Phone Number -->
     <TextView
         android:id="@+id/create_user_phone_number_text"
         style="@style/createUserText"
@@ -83,6 +85,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_user_phone_number_edittext" />
 
+    <!-- E-mail -->
     <TextView
         android:id="@+id/create_user_email_text"
         style="@style/createUserText"
@@ -109,6 +112,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_user_email_edittext" />
 
+    <!-- CPF -->
     <TextView
         android:id="@+id/create_user_cpf_text"
         style="@style/createUserText"
@@ -135,6 +139,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_user_cpf_edittext" />
 
+    <!-- Password -->
     <TextView
         android:id="@+id/create_user_password_text"
         style="@style/createUserText"
@@ -161,6 +166,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_user_password_edittext" />
 
+    <!-- Confirm Password -->
     <TextView
         android:id="@+id/create_user_confirm_password_text"
         style="@style/createUserText"
@@ -187,6 +193,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_user_confirm_password_edittext" />
 
+    <!-- Accept Terms -->
     <TextView
         android:id="@+id/create_user_terms_service_text"
         style="@style/createUserTermsServiceText"
@@ -213,6 +220,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_user_terms_service_text" />
 
+    <!-- Button create -->
     <Button
         android:id="@+id/create_user_register"
         style="@style/DefaultButton"

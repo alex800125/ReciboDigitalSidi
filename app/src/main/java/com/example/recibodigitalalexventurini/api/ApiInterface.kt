@@ -6,6 +6,7 @@ import com.example.recibodigitalalexventurini.utils.ConstantsUtils.Companion.URL
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils.Companion.URL_RECEIPT
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils.Companion.URL_USER
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils.Companion.URL_USER_LOGIN
+import com.example.recibodigitalalexventurini.utils.ConstantsUtils.Companion.URL_USER_RESET_PASSWORD
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -47,4 +48,12 @@ interface ApiInterface {
         @Field("phonenumber") phonenumber: String,
         @Field("acceptTerms") acceptTerms: Boolean
     ): Call<UserCreateResponse>
+
+    @FormUrlEncoded
+    @POST(URL_USER_RESET_PASSWORD)
+    fun postResetPassword(
+        @Field("phonenumber") phonenumber: String,
+        @Field("email") email: String,
+        @Field("cpf") cpf: String
+    ): Call<ForgotPasswordResponse>
 }

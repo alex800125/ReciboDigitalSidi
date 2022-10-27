@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.recibodigitalalexventurini.R
 import com.example.recibodigitalalexventurini.api.RetrofitClient
+import com.example.recibodigitalalexventurini.model.ForgotPassword
 import com.example.recibodigitalalexventurini.model.LoginResponse
 import com.example.recibodigitalalexventurini.utils.ConstantsUtils
 import retrofit2.Call
@@ -72,15 +73,12 @@ class LoginScreenActivity : AppCompatActivity() {
 
     private fun executeNewAccount() {
         Log.i(TAG, "executeNewAccount()")
-
         startActivity(Intent(this, CreateUserActivity::class.java))
     }
 
     private fun executeForgotPassword() {
         Log.i(TAG, "executeForgotPassword()")
-
-        // TODO implement
-        Toast.makeText(this, "Forgot Password executado", Toast.LENGTH_SHORT).show()
+        startActivity(Intent(this, ForgotPasswordActivity::class.java))
     }
 
     fun updateLoginMessageError(visibility: Boolean, errorMessage: String) {

@@ -8,7 +8,6 @@ class CreateUser(
     password: String,
     acceptTerms: Boolean
 ) {
-
     var name: String? = name
     var phoneNumber: String? = phoneNumber
     var email: String? = email

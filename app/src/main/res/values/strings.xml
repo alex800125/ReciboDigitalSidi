@@ -45,6 +45,10 @@
     <string name="create_user_password_error">Password doesn\'t match or is empty</string>
     <string name="create_user_terms_error">You have to accept the terms</string>
 
+    <!-- Forgot password -->
+    <string name="forgot_password_header">Forgot password</string>
+    <string name="forgot_password_reset">Reset!</string>
+
     <!-- Home Screen -->
     <string name="home_screen_qrcode">QR Code button</string>
     <string name="home_screen_add_button">Add category button</string>

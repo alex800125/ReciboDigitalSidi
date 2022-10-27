@@ -172,7 +172,7 @@ class CreateUserActivity : AppCompatActivity() {
     }
 
     fun showReturnFromApi(message: String) {
-        Log.i(TAG, "executePostNewUser() $message")
+        Log.i(TAG, "showReturnFromApi() $message")
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
